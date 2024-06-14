@@ -1,0 +1,129 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-image: url("background.jpg"); /* Replace with your background image */
+    background-repeat: repeat;
+}
+
+.container {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: deeppink;
+}
+
+.container a {
+    color: midnightblue;
+}
+
+.banner {
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 0rem;
+}
+
+header {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around; /* Distribute links evenly within the container */
+    width: 100%; /* Ensure nav takes up the full width of the container */
+    margin: 0;
+    padding: 0;
+}
+
+    nav a {
+        color: midnightblue;
+        text-decoration: none;
+        padding: 1rem; /* Adjust padding if needed */
+        text-align: center; /* Center align the text */
+        background-color: white;
+        flex: 1; /* Allow links to grow and take up equal space */
+        margin: 0 0.5rem; /* Add a margin between links */
+        border-radius: 10px; /* Adjust the value for more or less rounded corners */
+    }
+
+
+.boxes {
+    display: flex;
+    flex-direction: column; /* Changed to column for stacking */
+}
+
+.box {
+    display: flex; /* Make box a flex container */
+    padding: 0rem;
+}
+
+.box1 .title {
+    color: white; /* White text color */
+    font-weight: bold; /* Bold text */
+    font-size: 30px;
+    text-align: center; /* Align text within title to the right */
+    padding-bottom: 2rem;
+}
+
+.box:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.white {
+    background-color: white;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.box a,
+.box p {
+    flex: 1; /* Make both elements flexible and share space */
+}
+
+.box img {
+    margin: 0 auto;
+}
+
+.box1 {
+    display: flex; /* Make box1 a flex container */
+    flex-direction: column; /* Arrange elements vertically (optional) */
+    padding: 1rem;
+}
+
+    .box1 img {
+        width: 400px;
+        height: 300px;
+        float: right;
+    }
+
+.box2 {
+    display: flex; /* Make box2 a flex container */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text within each element */
+    flex: 1; /* Make sure it grows to fill its container */
+    padding: 1rem; /* Adjust padding if needed */
+}
+
+
+.box3
+{
+    padding: 2rem;
+}
+
+.box3 img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+}
