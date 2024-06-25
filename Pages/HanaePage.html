@@ -36,15 +36,68 @@
                         <br /><br />
 
                         <h2>Goal</h2>
-                        My main priority in this game is narrative design, 
-                        story writing, and character design. This is my first game to have a lite quest system, 
+                        My main priority in this game is narrative design,
+                        story writing, and character design. This is my first game to have a lite quest system,
                         each villager having a unique personality and a new quest each day. Through playing the levels, it showcases
                         character arcs for each character and progression of the story.
 
                         <br /><br />
 
                         <h2>Development</h2>
-                        .....
+                        This game was developed in Unity for the Spring Jam 2021. The theme was flexible so as long as the game had a spring feeling to it. I wanted to
+                        do a simple game where the player goes around collecting items (in this case flowers) and complete quests for NPCs. My main focus of
+                        the game was to design the narrative and characters for the game, so I used assets from Itch.io and GameDev Market for environment
+                        design. A since the game was going to be a top-down controller scheme, I borrowed code from my previous projects to expedite the coding
+                        process. The flower picking system is a basic collsion interaction, giving the player to pick up a flower when the player collides with the 
+                        trigger box for each plant. To track the player's flower count, the inventory system stores the flower amount in a static INT variable.
+                        <br /><br />
+
+                        The next step was the dialogue system. I used Inkle's Ink plugin for the first time, creating a simple system to write lines of dialogue
+                        and tage each line with the character's name and sprite. I then used a Character Manager that works along the Dialogue Manager to display
+                        the appropiate character and dialogue. Since I was going for a simple visual novel format, I designed the UI to have two characters present
+                        at a given moment, Hanae would always be located on the left and another character be displayed on the right. And like typical visual novel format
+                        the active character would be displayed normally while the inactive character will be shadowed with a black mask and lowered opacity.
+
+                        <br /><br />
+                        <img src="../HanaeImages/Hanae1.PNG" />
+                        <br />
+                        <h2>Narrative Design</h2>
+                        <br />
+                        The premise of the game revolves around picking flowers as a necesarry role to help revitalize the kingdom of Springdom. This way, it
+                        helps contextualize the palyer's role in the game and a reason as to why the player is doing their activities. I set the game in a desolate
+                        tower to showcase the importance of flower picking, and the emphasis on maintaining the environment.
+                        <br /><br />
+                        Flowers are also important for the quests of each character. Each character has a unique design and story arc independant from other storylines.
+                        This gives another reason as to why the player is picking flowers for each character, showcasing each character's personality and their overall
+                        character arc.
+                        <br /><br />
+                        The game is split into 5 levels, each representing a new day in the village. This gives a sense of progression in the story. Along with the days,
+                        to reflect the main character's actions of positiely affecting the environment, the level will gradually change, becoming more lively throughout
+                        the game. New areas are unlocked each day, expanding the map and making the player feel a sense of progression.
+                        <br /><br />
+                        <img src="../HanaeImages/Hanae2.PNG" />
+                        <br />
+                        <img src="../HanaeImages/Hanae3.PNG" />
+                        <br />
+                        <img src="../HanaeImages/Hanae4.PNG" />
+                        <br />
+                        Each day is finished when the player completes all the quests for the level and checks in at her cabin. If the player isn't finished
+                        with their quests, they will be told that they haven't finished and will need to continue the level. To give the player guidance, the
+                        old man NPC acts as a guide the player can seek out, telling the player the location of each character in the map. The quest progress
+                        is managed by a Quest Manager in the game during each level, tracking what has been completed and unlocking the ability to progress to
+                        the next day. The Quest Manager isn't static, changing the character quests each level and having to keep track for each day.
+                        <br /><br />
+                        To set the setting and premise of the game, I made an intro comic sequence. It is a simple script that holds images and sentences that
+                        the player progresses by pressing the Space bar. The same system is also used for the ending sequence.
+                        <br /><br />
+                        <h2>Intro Gameplay</h2>
+                        <video width="854" height="480" controls="controls">
+                          <source src="../HanaeImages/2024-06-24%2021-00-35.mp4" type="video/mp4" />                      
+                        </video>
+                        <br />
+                        <h2>Play Here: <a href="https://teitoku-lowliet.itch.io/royal-flower-picker-hanae">Itch.io Link</a> </h2>
+
+
 
                     </p>
                 </div>
