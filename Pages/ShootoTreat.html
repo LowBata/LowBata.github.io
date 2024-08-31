@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowell Batacan Portfolio</title>
+    <link href="../style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <h1>Lowell Batacan</h1>
+            <h3>Programmer | 2D/3D Artist | Narrative Designer/Writer</h3>
+        </div>
+        <header>
+            <nav>
+                <a href="../index.html">Projects</a>
+                <a href="#">Writing</a>
+                <a href="#">About Me</a>
+                <a href="#">Resume</a>
+            </nav>
+        </header>
+
+
+        <section class="boxes">
+            <div class="box white">
+                <div class="box3">
+                    <h1>Shoot o' Treat</h1>
+                    <p>
+
+                        A Halloween themed first-person shooter. It is a wave based survival game, you have 3 weapons available to you.
+                        Ammo is scarce and the night terrors are relentless. Fend off the night against evil candy out to get you.
+                        Explore the village and survive as long as you can, as waves get harder with each passing.
+
+                        <br /><br />
+                        Developed in Unity, with assests from various sources such as the Unity Asset Store and Itch.io store. Enemy uses BreadCrumb
+                        AI for pathfinding. It was a solo project that I wanted to do for the spirit of Halloween.
+
+                        <br />
+
+                        <h2>Goal</h2>
+                        I wanted to practice level and environment design, as well as designing first person shooter controls.
+
+                        <br />
+
+                        <h2>Development</h2>
+                        The game was developed in Unity and coded in C#. I started development by getting a basic first-person controller
+                        established. I then moved onto basic shooting mechanics. The game only has 3 weapons, a pistol, submachine gun, and shotgun.
+                        The idea behind this design is to balance weapon choices. Pistol would have unlimited ammo but has a low fire rate and damage
+                        output. The SMG would fire faster with slightly lower damage. The shotgun will fire slower with small ammo capacity and range,
+                        but makes up for it in high damage output. These variables would be adjusted during playtests, such as ammo amount, fire rate,
+                        and damage. The weapons are hit scan, spawning a particle effect to indicate where the bullets flew and landed.
+
+                        <br /><br />
+
+                        Next I designed the level. The main level is comprised of 3 parts, the graveyard, the town, and the port. I first made a
+                        sketch of the layout. Then I gathered free 3d models themed around fantasy from various sources like the Unity Asset Store
+                        and Itch.io asset store. To make the aesthetic cohesive, I went with low-poly models with flat colors. I also used the same
+                        types of models for the guns and enemies. With all the models gathered, I designed the level and tested to make sure movement
+                        was feasible in the level.
+
+                        <br /><br />
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="../ShootoTreatImages/Image1.png" alt="image1" width="300" height="300" />
+                                </td>
+                                <td>
+                                    <img src="../ShootoTreatImages/Image2.png" alt="image2" width="300" height="300" />
+                                </td>
+                                <td>
+                                    <img src="../ShootoTreatImages/Image3.png" alt="image3" width="300" height="300" />
+                                </td>
+
+                            </tr>
+                        </table>
+
+                        <br />
+
+                        <img src="../ShootoTreatImages/LevelMap.png" />
+
+                        <br /><br />
+
+                        To add more to the scene, I placed low poly trees around the map and as well as other decor. Although the map is secure, to
+                        ensure the player doesn't go out of bounds, I placed invisble walls around the map in areas like buildings, the beach, and fences.
+                        This is to make sure the player stays within the playable area.
+
+                        <br /><br />
+
+                        Since the game was themed around Halloween, I made the enemies into candy and sweet treats. The enemy would have
+                        two states: wander an area, follow player if within range. The enemies used Breadcrumb AI, which is free in the Unity store.
+                        The player will periodically leave instances of path nodes behind them, and the Breadcrumb AI will follow a trail behind the
+                        player if they are in range. Variables such as damage amount, health, movement speed, and  detection ranged were adjusted
+                        during playtesting.
+
+                        <br /><br />
+
+                        Since this is a wave-based game, the spawn system took awhile to figure out. Basically, the enemies spawn within random
+                        spawn points placed around the map. I chose specific points to place as I didn’t want the enemy to glitch into buildings.
+                        There is a total enemy counter that is increased after each wave. There are unlimited waves, so the player will keep playing
+                        until they die. In case enemies do spawn outside the map, I made invisible colliders that will cause the enemies to be destroyed
+                        and increment the counter accordingly.
+
+
+                        <h2>Gameplay</h2>
+
+                        <video width="854" height="480" controls="controls">
+                            <source src="../ShootoTreatImages/ShootoTreatGameplay.mp4" type="video/mp4" />
+                        </video>
+
+                        <br /><br />
+
+                        <h2>Download: <a href="https://teitoku-lowliet.itch.io/shoot-o-treat">Itch.io Link</a></h2>
+
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!--
+        <footer>
+            <ul>
+                <li><a href="#">Social Media 1</a></li>
+                <li><a href="#">Social Media 2</a></li>
+                <li><a href="#">Email</a></li>
+                <li><a href="#">Phone: 123-456-7890</a></li>
+            </ul>
+        </footer>
+        -->
+    </div>
+</body>
+</html>
