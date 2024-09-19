@@ -15,9 +15,9 @@ body {
     background-color: deeppink;
 }
 
-.container a {
-    color: midnightblue;
-}
+    .container a {
+        color: midnightblue;
+    }
 
 .banner {
     color: white;
@@ -63,10 +63,11 @@ nav {
 }
 
 .box1 .title {
-    color: white;
-    font-weight: bold;
+    color: white; /* White text color */
+    font-weight: bold; /* Bold text */
     font-size: 30px;
-    text-align: center; /* Center text horizontally */
+    text-align: center; /* Align text within title to the right */
+    padding-bottom: 2rem;
 }
 
 .box:hover {
@@ -91,10 +92,9 @@ nav {
 }
 
 .box1 {
-    display: flex; /* Make .box1 a flex container */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    height: 100%; /* Ensure .box1 takes up full height of its container */
+    display: flex; /* Make box1 a flex container */
+    flex-direction: column; /* Arrange elements vertically (optional) */
+    padding: 1rem;
 }
 
     .box1 img {
@@ -113,17 +113,13 @@ nav {
 }
 
 
-.box3
-{
+.box3 {
     padding: 2rem;
 }
 
-.box3 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-footer {
-}
+    .box3 img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
