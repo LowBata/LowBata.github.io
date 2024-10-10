@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    max-width: 50%;
+    max-width: 42%;
     margin: 0 auto;
     padding: 0rem;
     display: flex;
@@ -70,10 +70,6 @@ nav {
     padding-bottom: 2rem;
 }
 
-.box:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
 .white {
     background-color: white;
 }
@@ -84,7 +80,7 @@ nav {
 
 .box a,
 .box p {
-    flex: 1; /* Make both elements flexible and share space */
+    flex: none; /* Make both elements flexible and share space */
 }
 
 .box img {
@@ -105,12 +101,14 @@ nav {
 
 .box2 {
     display: flex; /* Make box2 a flex container */
+    flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center items vertically */
     align-items: center; /* Center items horizontally */
     text-align: center; /* Center text within each element */
-    flex: 1; /* Make sure it grows to fill its container */
     padding: 1rem; /* Adjust padding if needed */
+    flex: 1; /* Allow it to fill available space */
 }
+
 
 
 .box3 {
@@ -123,3 +121,43 @@ nav {
         display: block;
         margin: 0 auto;
     }
+
+/*PROJECT TAGS*/
+/* Make this new container flex to display rects side by side */
+.rect-container {
+    display: flex; /* Makes the child elements (AIrect and ARTrect) align horizontally */
+    justify-content: center; /* Centers the elements horizontally */
+    gap: 5px; /* Adds space between the rectangles */
+    margin-top: 1rem; /* Adds space above the row */
+}
+
+/*PROJECT TAGS*/
+.AIrect, .ARTrect, .PROGrect, .NARRATIVErect, .LEVELrect {
+    display: block; /* Ensure the rect takes up the full width and stays below the text */
+    padding: 10px; /* Adjust padding for size */
+    color: white; /* Text color */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 15px; /* Font size */
+    text-align: center; /* Center text inside the rectangle */
+    width: fit-content; /* Ensures the width fits around the content */
+}
+
+/* Custom styles for each rectangle */
+.AIrect {
+    background-color: #cc0000; /* Background color */
+}
+
+.ARTrect {
+    background-color: #cc00cc; /* Background color */
+}
+.PROGrect {
+    background-color: #003cb3; /* Background color */
+}
+
+.NARRATIVErect {
+    background-color: #e67300; /* Background color */
+}
+
+.LEVELrect {
+    background-color: #009900; /* Background color */
+}

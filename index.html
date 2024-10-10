@@ -1,16 +1,16 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lowell Batacan Portfolio</title>
-  <link href="style.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowell Batacan Portfolio</title>
+    <link href="style.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container">
         <div class="banner">
             <h1>Lowell Batacan</h1>
-            <h3>Programmer | 2D/3D Artist | Narrative Designer/Writer</h3>
+            <h3>Programmer | 2D Artist | Narrative Designer</h3>
         </div>
         <header>
             <nav>
@@ -23,23 +23,6 @@
         </header>
         <section class="boxes">
 
-            <!-- AI Vtuber -->
-            <div class="box white">
-                <div class="box1">
-                    <div class="title">
-                        <a href="Pages/AIVtuberProject.html">AI Vtuber Creative Project</a>
-                    </div>
-                    <img src="CoverImages/AI-Vtuber-Cover.PNG" alt="AI Vtuber Image"/>
-                </div>
-                <div class="box2">
-                    <p>
-                        A project that utlizes an LLM like Gemini, Twitch API from the titular streaming platform, and Python coding to create and
-                        desgin an interactive AI Vtuber experience. It can be easily deployed and interact with chat with a talking with a voice,  
-                        while simultaneously having gameplay in the background. This project is a basic foundation that can be built upon more.
-                    </p>
-                </div>
-            </div>
-
             <!-- Mental Patch -->
             <div class="box pink">
                 <div class="box1">
@@ -51,13 +34,57 @@
                 <div class="box2">
                     <p>
                         A 2d text-based simulator where you take on the role of a therapist.
-                        You talk with digital NPC patients that have their own problems.
-                        The goal is to say the correct things in order to raise their Emotional Level meter.
-                        The player wins the game by getting their patient’s Emotional Level meter to 100, achieving happiness for the patient.
-                        Through this game, it will teach the players about empathy and the importance of mental health.
+                        Developed in Godot 4, you talk with digital NPC patients and help them with their problems.
                     </p>
+                    <div class="rect-container">
+                        <div class="AIrect">AI</div>
+                        <div class="ARTrect">Art</div>
+                        <div class="PROGrect">Programming</div>
+                        <div class="NARRATIVErect">Narrative</div>
+                    </div>
                 </div>
             </div>
+
+            <!-- DATING SIM LLM -->
+            <div class="box white">
+                <div class="box1">
+                    <div class="title"><a href="Pages/DatingSimLLM.html">Dating Sim LLM</a></div>
+                    <img src="CoverImages/Dating-Sim-LLM-Cover.PNG" alt="Dating Sim Image">
+                </div>
+                <div class="box2">
+                    <p>
+                        A project developed in Godot and connects with Gemini LLM API for a dynamic dating sim experience.
+                        Chat with Otae and raise her affection to unlock more features.
+                    </p>
+                    <div class="rect-container">
+                        <div class="AIrect">AI</div>
+                        <div class="PROGrect">Programming</div>
+                        <div class="NARRATIVErect">Narrative</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Vtuber -->
+            <div class="box pink">
+                <div class="box1">
+                    <div class="title">
+                        <a href="Pages/AIVtuberProject.html">AI Vtuber Creative Project</a>
+                    </div>
+                    <img src="CoverImages/AI-Vtuber-Cover.PNG" alt="AI Vtuber Image" />
+                </div>
+                <div class="box2">
+                    <p>
+                        A project that utlizes an LLM like Gemini, Twitch API from the titular streaming platform, and Python coding to create and
+                        desgin an interactive AI Vtuber experience. The bot connects to the user's Twitch stream to interact with chat.
+                    </p>
+                    <div class="rect-container">
+                        <div class="AIrect">AI</div>
+                        <div class="PROGrect">Programming</div>
+                    </div>
+                </div>
+            </div>
+
+
 
             <!-- DROSS -->
             <div class="box white">
@@ -69,10 +96,15 @@
                 </div>
                 <div class="box2">
                     <p>
-                        A top down 2d game that combines pixel and hand drawn art. Developed for the game jam, Sea Jam 2021,
-                        as part of MrBeast's ocean clean up activity, Dross follows the titular humanized hermit crab who acquired
-                        a metal detector and uses it to try to find treasure while accidentally cleaning up the sea.
+                        A top down 2d game that combines pixel and hand drawn art where you pick up trash from the sea floor.
+                        Developed in Unity for the game jam, Sea Jam 2021 as part of MrBeast's ocean clean up event.
                     </p>
+                    <div class="rect-container">
+                        <div class="ARTrect">Art</div>
+                        <div class="PROGrect">Programming</div>
+                        <div class="NARRATIVErect">Narrative</div>
+                        <div class="LEVELrect">Level Design</div>
+                    </div>
                 </div>
             </div>
 
@@ -86,11 +118,15 @@
                 </div>
                 <div class="box2">
                     <p>
-                        A top down 2d pixel art game where you play as Hanae, a royal flower picker,
-                        sent to a village in need of flowers. Help the villagers with their requests,
-                        rejuvenate the land, and save the village from its fate. The gameplay is simple, roam around,
-                        plant seeds, and pick up flowers. Each villager has their own story that unfolds throughout the days.
+                        A top down 2d pixel art story driven game developed in Unity. Play as Hanae, a royal flower picker,
+                        where you help each villager and see their stories unfold.
                     </p>
+                    <div class="rect-container">
+                        <div class="ARTrect">Art</div>
+                        <div class="PROGrect">Programming</div>
+                        <div class="NARRATIVErect">Narrative</div>
+                        <div class="LEVELrect">Level Design</div>
+                    </div>
                 </div>
             </div>
 
@@ -102,42 +138,55 @@
                 </div>
                 <div class="box2">
                     <p>
-                        A top-down 2d pixel art game made in Unity. Made for the NaNoRenO
+                        A top-down 2d pixel art game developed in Unity. Made for the NaNoRenO
                         2020 game jam, it follows the story of Caius, an exorcist who specializes
-                        in banishing ghosts and is also a loving husband to his wife, Uzuki. However,
-                        a tragic fate fell upon them at their house that has forever changed their lives.
+                        in banishing ghosts and his wife, Uzuki
                     </p>
-                </div>
-            </div>
-
-            <!-- DATING SIM LLM -->
-            <div class="box pink">
-                <div class="box1">
-                    <div class="title"><a href="Pages/DatingSimLLM.html">Dating Sim LLM</a></div>
-                    <img src="CoverImages/Dating-Sim-LLM-Cover.PNG" alt="Dating Sim Image">
-                </div>
-                <div class="box2">
-                    <p>
-                        A project developed in Godot that utilizes Generative AI. It is a straightforward dating sim where you chat
-                        with the character in order to get affinity and make her happy. The responses are generated by Gemini.
-                        The more you talk and gain camaraderie with the character, you unlock more features like new actions and
-                        locations to go with her. The game was developed in Godot and connects with Gemini API for a functional chatbot dating experience.
-                    </p>
+                    <div class="rect-container">
+                        <div class="ARTrect">Art</div>
+                        <div class="PROGrect">Programming</div>
+                        <div class="NARRATIVErect">Narrative</div>
+                        <div class="LEVELrect">Level Design</div>
+                    </div>
                 </div>
             </div>
 
             <!-- TRIP BY 8BIT -->
-            <div class="box white">
+            <div class="box pink">
                 <div class="box1">
                     <div class="title"><a href="Pages/Tripby8bit.html">Trip By 8-Bit</a></div>
                     <img src="CoverImages/Trip-by-8bit-cover.png" alt="Trip by 8-bit">
                 </div>
                 <div class="box2">
                     <p>
-                        A 3d/2d game experience. After a sad day, Noah walks back home, recollecting memories and reminiscing about the
-                        good old days. Take a walk back along with him on this interactive experience.  A love letter to games, childhood,
-                        and life. The game uses narrative and an interesting twist on graphics to help evoke a nostalgic feeling.
+                        A 3d/2d game experience that is love letter to games, childhood,
+                        and life. Developed in Unity, the game uses narrative and an interesting usage on graphics to help evoke a nostalgic feeling.
                     </p>
+                    <div class="rect-container">
+                        <div class="PROGrect">Programming</div>
+                        <div class="NARRATIVErect">Narrative</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DECK-FECTIVE -->
+            <div class="box white">
+                <div class="box1">
+                    <div class="title">
+                        <a href="Pages/Deckfective.html">Deck-fective</a>
+                    </div>
+                    <img src="CoverImages/Deckfective-logo.png" alt="Deckfective Image">
+                </div>
+                <div class="box2">
+                    <p>
+                        A 2d turn-based card collecting game with pixel art.
+                        Developed with Unity in collaboration with a team as an exercise in Agile development,
+                        using JIRA, and working exclusively in roles.
+                    </p>
+                    <div class="rect-container">
+                        <div class="ARTrect">Art</div>
+                        <div class="NARRATIVErect">Narrative</div>
+                    </div>
                 </div>
             </div>
 
@@ -151,48 +200,13 @@
                 </div>
                 <div class="box2">
                     <p>
-                        Developed in Godot for an Alternative Controllers class, this project is inspired by gacha games and
-                        capsule toy vending machines. The game is split into two parts, the gacha roll and the battle section.
-                        Players can roll for more gacha-mons and use said gacha-mons in a turn-based battle system. The reward for
-                        winning a battle against an enemy NPC is coins which can be used for more rolls, making for a simple yet effective gameplay loop
+                        A 2d turn based game with hand drawn art and a gacha system.
+                        Developed in Godot, this was created for an Alternative Controllers class with usage of a custome built device.
                     </p>
-                </div>
-            </div>
-
-            <!-- SHOOT O TREAT -->
-            <div class="box white">
-                <div class="box1">
-                    <div class="title">
-                        <a href="Pages/ShootoTreat.html">Shoot o' Treat</a>
+                    <div class="rect-container">
+                        <div class="ARTrect">Art</div>
+                        <div class="PROGrect">Programming</div>
                     </div>
-                    <img src="CoverImages/Shoot-o-treat-cover.png" alt="Shoot o Treat Image">
-                </div>
-                <div class="box2">
-                    <p>
-                        A Halloween themed first-person shooter. It is a wave based survival game, you have 3 weapons available to you.
-                        Ammo is scarce and the night terrors are relentless. Fend off the night against evil candy out to get you.
-                        Explore the village and survive as long as you can, as waves get harder with each passing.
-                        Developed in Unity, with assests from various sources. Enemy uses BreadCrumb AI for pathfinding.
-                        It was a solo project that I wanted to do for the spirit of Halloween.
-                    </p>
-                </div>
-            </div>
-
-            <!-- DECK-FECTIVE -->
-            <div class="box pink">
-                <div class="box1">
-                    <div class="title">
-                        <a href="Pages/Deckfective.html">Deck-fective</a>
-                    </div>
-                    <img src="CoverImages/Deckfective-logo.png" alt="Deckfective Image">
-                </div>
-                <div class="box2">
-                    <p>
-                        A 2d turn-based card collecting game with pixel art. Amongst the scrap, a defect rises to the challenge to fight
-                        against the robot uprising. Collect upgrades in the form of cards in order to perform combos in a turn-based deck building game.
-                        Developed with Unity in collaboration with a team, this project was an exercise in Agile development,
-                        using JIRA, and working exclusively in roles.
-                    </p>
                 </div>
             </div>
 
@@ -206,20 +220,43 @@
                 </div>
                 <div class="box2">
                     <p>
-                        A 3d platformer in collaboration with a group as an exercise in Level Desing. The game was developed in Godot 4 and utilizes the 3d
+                        A 3d platformer in collaboration with a group as an exercise in Level Design. The game was developed in Godot 4 and utilizes the 3d
                         platform starter pack from Kenney and Cyclops Level Editor tools.
-                        A gargantuan tree bearing a single special fruit. The architecture in and around the tree is uninviting,
-                        dangerous, and isn’t hostile so much as apathetic towards the player. Fallen rotten fruit litters the ground.
-                        The player is but one of many who’ve tried to claim the tree’s fruit, and more homely derelict camps can occasionally
-                        be spotted around the more desolate architecture long a go built into the tree.
-
-
                     </p>
+                    <div class="rect-container">
+                        <div class="PROGrect">Programming</div>
+                        <div class="LEVELrect">Level Design</div>
+                    </div>
                 </div>
             </div>
 
-        </section>
-        <!--
+            <!-- SHOOT O TREAT -->
+            <div class="box pink">
+                <div class="box1">
+                    <div class="title">
+                        <a href="Pages/ShootoTreat.html">Shoot o' Treat</a>
+                    </div>
+                    <img src="CoverImages/Shoot-o-treat-cover.png" alt="Shoot o Treat Image">
+                </div>
+                <div class="box2">
+                    <p>
+                        A Halloween-themed  wave based first-person shooter.
+                        Developed in Unity with assets from Itch.io and Unity Asset Store.
+                    </p>
+                    <div class="rect-container">                    
+                        <div class="PROGrect">Programming</div>
+                        <div class="LEVELrect">Level Design</div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+    </div>
+
+    </section>
+    <!--
     <footer>
         <ul>
             <li><a href="#">Social Media 1</a></li>
@@ -229,6 +266,5 @@
         </ul>
     </footer>
     -->
-    </div>
 </body>
 </html>
