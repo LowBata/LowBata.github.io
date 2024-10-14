@@ -103,11 +103,17 @@ nav {
     display: flex; /* Make box2 a flex container */
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center items vertically */
-    align-items: center; /* Center items horizontally */
-    text-align: center; /* Center text within each element */
-    padding: 1rem; /* Adjust padding if needed */
+    align-items: center; /* Center the whole block horizontally */
+    text-align: center; /* Center the entire box content */
+    padding: 2rem; /* Adjust padding if needed */
     flex: 1; /* Allow it to fill available space */
 }
+
+    .box2 p {
+        text-align: left; /* Left align the text within the <p> */
+        /*  max-width: 600px; Set a max width to keep it from stretching too much */
+        margin: 0 auto; /* Center the paragraph inside the box2 container */
+    }
 
 
 
@@ -150,6 +156,7 @@ nav {
 .ARTrect {
     background-color: #cc00cc; /* Background color */
 }
+
 .PROGrect {
     background-color: #003cb3; /* Background color */
 }
