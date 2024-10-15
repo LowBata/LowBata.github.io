@@ -128,6 +128,14 @@ nav {
         margin: 0 auto;
     }
 
+    .box3 video {
+        max-width: 100%; /* Let the video scale down within the box */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Remove extra inline spacing */
+        margin: 0 auto; /* Center the video horizontally */
+        object-fit: contain; /* Keep the entire video visible inside its container */
+    }
+
 /*PROJECT TAGS*/
 /* Make this new container flex to display rects side by side */
 .rect-container {
