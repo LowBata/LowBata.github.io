@@ -27,52 +27,120 @@
                 <div class="box3">
                     <h1>Mental Patch</h1>
                     <p>
-                        **A 2D Text-Based Simulator** where you take on the role of a therapist.
-                        You talk with digital NPC patients who have their own problems.
-                        The goal is to say the correct things to raise their Emotional Level meter.
-                        The player wins the game by getting their patient's Emotional Level meter to 100, achieving happiness for the patient.
-                        Through this game, you'll learn about empathy and the importance of mental health.
-                        <br />
-
-                        <h2>Goal</h2>
-                        I'm fascinated by the ethical and innovative uses of Generative AI and Large Language Models in game design.
-                        I love talking with AI chatbots and roleplaying, so I decided to combine the two with a Serious Game element.
-                        This project was a personal exercise in integrating LLMs (specifically Gemini) into a game developed in Godot.
-                        <br /><br />
-
-                        <h2>Development</h2>
-                        The game was designed in Godot 4. I've always had a fondness for Godot and would take any chance I can get to develop games in it.
-                        The LLM model used for this game is Gemini 1.5 Pro. It's integrated into the game code via URL requests.
-                        I personally love using Gemini out of the major LLMs available because of how creative it can get with responses, as well as its great memory retention, something most LLMs have struggled with.
-                        In order for the game to work, the user will need a Gemini API key which can be found at this link:
-                        <br /><br />
-                        <a href="https://ai.google.dev/gemini-api/docs/api-key">Gemini API Key</a>
-                        <br /><br />
-
-                        <img src="../MentalPatchImages/Screenshot1.PNG" />
-                        <br /><br />
-
-                        Once the user applies their Gemini API key, it will be saved locally in the game files. This way, the user won't have to input it every time.
-                        The API key is needed so it can be appended every time the LLM API request is sent in the URL. Through this method, it becomes easy to parse requests and responses from Gemini. Here is a screenshot of sending the initial prompt, telling the bot that it will be roleplaying a character with set parameters and that it will need to respond in a JSON format. JSON is essential to making this all work as it makes it easier to store character data like messages and emotions.
-                        <br /><br />
-                        <img src="../MentalPatchImages/CodeScreenshot.PNG" alt="Code Screenshot" />
-                        <br /><br />
-
-                        After integrating Gemini into Godot, the next step was to design the game around the experience. I designed 3 distinct patients, each with their own problem and personality that are initialized in the initial prompt sent to the API. The player can choose who they want to interact with. From there, the appropriate UI is displayed so the player can send text responses to the bot, and the message from the bot will be displayed at the bottom. There is a reset button available as there are times that the bot will become unable to respond or process the request. This can be due to fast intervals of messages which can exceed the quota provided by the free version of Gemini, or if the user said something inappropriate that triggers the bot's safety ratings.
-                        <br /><br />
-
-                        The win condition is achieved when the player is able to raise the patient's Emotional Level to 100 (Full Meter). The fail condition activates when the player messes up the responses enough times to lower the patient's Emotional Level to 0 (Empty Meter). The visualization of the Emotional Level and the character's expressions give enough feedback and encouragement to pursue a happier ending.
-
                         <h2>Gameplay</h2>
                         <video width="854" height="480" controls="controls">
                             <source src="../MentalPatchImages/Gameplay.mp4" type="video/mp4" />
                         </video>
                         <br /><br />
 
+                        <h2>Overview</h2>
+                        A 2d text-based simulator where you take on the role of a therapist. You talk with digital NPC patients that have their own problems.
+                        The goal is to say the correct things in order to raise their Emotional Level meter. The player wins the game by getting their patient’s Emotional Level
+                        meter to 100, achieving happiness for the patient. Through this game, it will teach the players about empathy and the importance of mental health.
+
+                        <br />
+
+                        <h2>Goal</h2>
+                        I am fascinated by the ethical and innovative uses of Generative AI and Large Language Models in game design. I love talking with AI chatbots and
+                        roleplaying, so I decided to combine the two with a Serious Game element to it. This project was a personal exercise in integrating LLMs
+                        (specifically Gemini) into a game developed in Godot.
+
+                        <br />
+
+                        <h2>Development</h2>
+                        The development of Mental Patch began with a fascination for integrating Generative AI into game design. I had previously worked on a
+                        Dating Sim LLM project, which gave me a foundational understanding of how to communicate with the Gemini API. This experience proved valuable and
+                        efficient, as I already had a basic setup for making API calls and handling responses. However, this project presented new challenges, particularly
+                        in creating a unique experience that felt meaningful and engaging through the lens of a therapist.
+
+                        <br /><br />
+
+                        <h3>Building the Foundation</h3>
+                        First, I needed a way to integrate Gemini into Godot. Fortunately, I already started exploring a public Godot project that
+                        showcased the utility of the Gemini API. This project provided example scenes and code snippets that demonstrated how to format API
+                        requests and parse responses. Using this as a reference, I set up the initial connection to the Gemini API by making URL calls with my
+                        generated API key. The first call was crucial—it established the connection and allowed me to send prompts to the Gemini 1.5 model.
+
+                        <h3>Crafting the AI’s Behavior</h3>
+                        The next step was to design the AI’s behavior to fit the role it was intended in the game, as a therapist. I began by testing prompts to ensure the
+                        AI could roleplay as a patient effectively. The initial prompt included:
+
+                        <br />- The personality of the character (e.g., shy, anxious, or depressed).
+                        <br />- The role it was playing (a patient seeking therapy).
+                        <br />- The format for its response (JSON).
+
+                        <br /><br />
+
+                        <img src="../MentalPatchImages/CodeScreenshot.PNG" />
+
+                        <br /><br />
+
+                        I chose JSON because it allowed the AI to send back structured data, including the patient’s message, their current emotion,
+                        and their emotional health value. This structure made it easier to parse and use the data in the game. I realized JSON format was
+                        the best as it acted as a tagging system, which allows me to parse the data easier.
+
+                        <br /><br />
+
+                        To refine the AI’s responses, I included an example message in the prompt and defined the range of emotions it could express
+                        (e.g., happy, sad, anxious). I also specified the minimum and maximum values for the emotional health meter (0 to 100). After several iterations
+                        of testing and tweaking, I finally got the AI to respond in a way that felt authentic and appropriate for the game’s tone.
+
+                        <h3>Parsing and Using the Data</h3>
+                        Once the AI’s responses were structured in JSON, I wrote a function to parse the data. The emotional health value was returned as a number, and the
+                        JSON format made it easy to extract this data using a tagging system. Godot has a method that converts a JSON output into a Dictionary object, in which the
+                        variables can then be accessed.
+
+                        <br /><br />
+
+                        <img src="../MentalPatchImages/CodeScreenshot2.PNG" />
+
+                        <br /><br />
+
+                        From there, I assigned the dictionary values to variables and created separate functions to handle:
+                        <br />- Displaying the patient’s sprite based on their current emotion.
+                        <br />- Adjusting and checking the emotional health value.
+                        <br /> - Displaying the patient’s message in the UI
+
+                        <br /><br />
+
+                        This modular approach made the code easier to maintain and allowed me to iterate quickly during playtesting.
+
+                        <h3>Designing the Patients</h3>
+                        With the core functionality in place, I shifted my focus to designing the three AI patients. Each patient was designed to represent a different difficulty level,
+                        reflecting the varying degrees of mental health challenges:
+                        <ol>
+                            <li>Sarah (Easy): Struggles with social anxiety. Her conversations are lighter, and her emotional health is easier to improve.</li>
+                            <li>Jacob (Medium): Faces love and marriage problems. His dialogue is more nuanced, requiring the player to think carefully about their responses.</li>
+                            <li>Chris (Hard): Battles depression and suicidal thoughts. His conversations are emotionally intense, and his emotional health is harder to improve.</li>
+                        </ol>
+
+                        To make the patients feel more dynamic, I added likes and dislikes for each character. For example, Sarah might respond positively to questions about her hobbies
+                        but become anxious when discussing large social gatherings. These traits added depth to the interactions and encouraged players to think empathetically.
+
+                        <br /><br />
+
+                        <img src="../MentalPatchImages/Screenshot2.PNG" />
+
+                        <h3>Playtesting and Iteration</h3>
+                        Playtesting was a critical part of the development process. After plenty of sessions roleplaying as a therapist, testing different dialogue options, and
+                        observing how the AI responded. The hardest part was ensuring the win condition (raising the emotional health meter to 100) was achievable, especially for Chris,
+                        whose depression made him resistant to positive feedback. I had to adjust the emotional health valuables for each character in order to make the experience feel right.
+
+                        <br /><br />
+
+                        There were moments when the AI would become unresponsive or difficult to reason with, particularly during rapid-fire conversations that exceeded Gemini’s free-tier quota’s
+                        rate limit, so I would have to pause conversing for several minutes in order to resume. To address this, I added a reset button that allowed players to restart the conversation
+                        if the AI stopped responding.
+
+                        <br /><br />
+
+                        Also if the AI is unable to generate a response for any reason, I set a default message in the code that will be played automatically. The message is 
+                        to encourage the player to send in a similar response again as the AI will be able to generate a response afterwards.
+
                         <h2>Project Files</h2>
                         <h4>
                             <a href="../MentalPatchImages/MentalPatchBuild.zip">Playable Build</a> |
-                            <a href="https://drive.google.com/file/d/15020_VIwGXBn2z0AQ3VcyDlbI5fL8HVj/view?usp=sharing">Godot Project</a>
+                            <a href="https://github.com/AwesomeDudex5/MentalPatch">Github Repository</a>
                         </h4>
                     </p>
                 </div>
