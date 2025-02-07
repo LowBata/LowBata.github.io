@@ -27,51 +27,104 @@
                 <div class="box3">
                     <h1>Dross</h1>
                     <p>
-                        A top-down 2D game that combines pixel and hand-drawn art. Developed for the game jam, Sea Jam 2021, as part of
-                        MrBeast's ocean cleanup activity, Dross follows the titular humanized hermit crab who acquires a metal detector and
-                        uses it to try to find treasure while accidentally cleaning up the sea.
+                        <h2>Intro Gameplay</h2>
+                        <video width="854" height="480" controls="controls">
+                            <source src="../DrossImages/2024-06-18%2011-41-27.mp4" type="video/mp4" />
+                        </video>
 
-                        <br />
+                        <h2>Overview</h2>
+                        A top down 2d game that combines pixel and hand drawn art. Developed for the game jam, Sea Jam 2021, as part of MrBeast's ocean clean up activity,
+                        Dross follows the titular humanized hermit crab who acquired a metal detector and uses it to try to find treasure while accidentally cleaning up the sea.
 
                         <h2>Goal</h2>
-                        I wanted to create a simple gameplay loop with priorities toward the art and story. The pixel art was made in
-                        Aseprite and the character art was made in MediBang. The overall theme of the game is to promote beach cleanup,
-                        and that even with ulterior motives, one can make their environment a better place.
-
-                        <br /><br />
+                        I wanted to create a simple gameplay loop with priorities toward the art and story. The pixel art was made in Aseprite and the character art was made in Medibang.
+                        The overall theme of the game is to promote beach cleanup, and that even with ulterior motives, one can make their environment a better place.
 
                         <h2>Development</h2>
-                        The game was designed and developed in Unity. I have worked with Unity for a long time now, making it easy
-                        to efficiently build a small 2D game. I constructed the game around the format of level-based scenarios, each level
-                        having its own story with dialogue and character interactions. I was inspired by the work of an indie developer called
-                        <a href="https://npckc.itch.io/">npckc</a> who creates games with simple gameplay loops to then convey a meaningful story.
+                        Dross was born out of a desire to create a game that combined a simple, engaging gameplay loop with a character-driven story.
+                        With the theme of ocean cleanup as the foundation, I aimed to design a game that felt both meaningful and fun to play. Given the one-month time limit for Sea Jam 2021,
+                        I leaned into my strengths: top-down 2D games and dialogue systems.
+
+                        <h3>Designing the Core Mechanics</h3>
+                        The first step was to establish the core gameplay loop. I wanted a simple mechanic that aligned with the ocean cleanup theme, so I settled on having the
+                        player walk up to trash and pick it up. This required implementing basic top-down movement and collision detection. Using Unity’s 2D physics system,
+                        I created a player controller with movement inputs and a collision box to interact with trash objects.
+
                         <br /><br />
-                        Through this methodology, I designed a simple top-down 2D game revolving around a metal detector mechanic. I chose
-                        this mechanic because it also parallels the theme of ocean cleanup that was presented in the game jam. The main character
-                        uses his metal detector to pick up junk from the ocean and clean up the sea. And because I also wanted to include an anime
-                        dating sim, each level introduces a new fish-based girl the main character, Dross, talks with, highlighting not only their
-                        personality but also the central point of each level. The central point is the conflict or situation that arose from junk
-                        falling onto the ocean floor. By the end of the game, the player gets the treasure he sought out but eventually chooses
-                        to settle down with one of the main heroines, giving the player a choice between the characters.
+
+                        However, I quickly ran into a problem: how would the game track the trash collected in each level? My initial thought was to have the game manager
+                        search for all objects tagged as "trash," but I realized this approach would be inefficient and costly, especially as the number of trash objects increased.
+
                         <br /><br />
-                        The first step of development was to design the control scheme, which is a simple top-down 2D movement system.
-                        Then I implemented the metal detector system, which is basically a game manager that collects the positions of all the
-                        junk scattered throughout the level, and then the player controller will check each time through the list of junk positions
-                        the distance. The closer they get, the color on the metal detector changes accordingly. And lastly, for the dialogue system,
-                        I used a Unity plugin called "Inkle's Ink" which allows me to easily construct long chains of dialogue and tag the lines with
-                        information such as character and sprite.
-                        <br /><br />
-                        <img src="../DrossImages/DrossGameplay.gif" />
+
+                        To solve this, I designed an event system. When a trash object is spawned, it emits a signal, and the game manager listens for these signals.
+                        This way, the game manager only tracks relevant objects, reducing performance overhead. The game manager also handles displaying player progress,
+                        such as the number of trash items collected and the remaining items in the level.
+
                         <br />
-                        The word 'Dross' means something regarded as worthless, rubbish. Since the main character is a lazy hermit crab who likes to
-                        collect things and the game is centered around ocean trash and cleanup, I think Dross was an appropriate name for the game and
-                        titular character.
+                        <img src="../DrossImages/Code-TrashEvents.PNG" />
+                        <br />
+
+
+                        <h3>Structuring the Game</h3>
+                        Since Dross was designed as a level-based game, I needed a way to manage story progression alongside gameplay. I decided to use visual novel-style scenes to
+                        tell the story, with scenes triggered at the beginning and end of each level. The game manager would handle these transitions, ensuring the story unfolded seamlessly.
 
                         <br /><br />
 
-                        <h2>Character Designs</h2>
-                        Because I was setting this within the ocean, I designed the characters around various fish and sea creatures, each design
-                        having a distinct motif to help indicate what animal they were based on.
+                        However, this system felt too rigid. It didn’t allow for dialogue scenes to occur during gameplay, which limited the narrative’s dynamism. To address this,
+                        I redesigned the dialogue system to include collision-based triggers. Levels were designed with narrow pathways or specific areas where players would naturally
+                        encounter these triggers. Once the final trigger in a level was activated, the game manager would transition to the next scene.
+
+
+                        <h3>Building the Dialogue System</h3>
+                        For the dialogue system, I wanted something more dynamic than manually managing long strings or parsing text files.
+                        Drawing from my previous project, *Royal Flower Picker Hanae*, I decided to use the **Inkle’s Ink Integration** plugin. This plugin allowed me to
+                        write dialogue in a structured format, with tags for character names, expressions, and other metadata.
+
+                        <br /><br />
+
+                        <img src="../DrossImages/DrossInk1.PNG" />
+                        <br />
+                        <img src="../DrossImages/Code-DialogueMode.PNG" />
+                        <br />
+                        <img src="../DrossImages/Code-parseDialogue.PNG" />
+                        <br /><br />
+
+                        I wrote a script to process Ink objects, extracting the relevant data and connecting it to the UI system. This enabled the game to display visual novel-style
+                        scenes with character sprites, names, and dialogue. To manage character sprites, I created a Character Manager object, which stored an array list of character classes.
+                        Each class contained the character’s name and their sprites for different expressions.
+
+                        <br /><br />
+
+                        While this approach worked, it had its limitations. For example, if I needed to change a character’s name, I had to update it in both the Character Manager and
+                        the Ink dialogue files. This lack of flexibility was a trade-off I accepted due to the time constraints of the game jam.
+
+                        <br /><br />
+                        <img src="../DrossImages/code-dialoguemanager.PNG" />
+
+                        <br />
+                        <img src="../DrossImages/Diagram Dialgoue Systems.PNG" />
+                        <br />
+
+
+                        <h3>Designing the Characters and Story</h3>
+                        The narrative and character design were central to *Dross*. I chose a hermit crab as the protagonist because of their natural scavenging behavior,
+                        which fit the theme of collecting treasure (and inadvertently cleaning up the ocean). For the supporting cast, I researched various fish and sea creatures,
+                        designing each character with a distinct color palette and personality.
+
+                        <br /><br />
+
+                        The story was structured around each level introducing a new character, with their personal conflicts tied to the ocean’s pollution.
+                        This approach allowed me to weave the cleanup theme into the narrative while keeping the focus on the characters.
+
+                        <br /><br />
+
+                        Because I was setting this within the ocean, I designed the characters around various fish and sea creatures, each design having a distinct
+                        motif to help indicate what animal they were based on.
+
+                        <br />
+
                         <ul>
                             <li>Dross - Hermit Crab</li>
                             <li>Sai - Red Salmon</li>
@@ -81,69 +134,25 @@
                             <li>Sera - Starfish</li>
                             <li>Gawr Gura - Shark</li>
                         </ul>
-                        <img src="../DrossImages/DrossCharacters.png" alt="Dross Characters" />
-                        <br />
-                        I tried to go for a variety of colors to help make each character stand out from each other. Gawr Gura was an extra
-                        addition I included as a bonus character since I like VTubers and she fit the theme of the game as well.
-                        <br /><br />
-                        All the art for the characters was created in MediBang, my go-to drawing program. I also created 2-3 expressions for each
-                        character to display their emotions through the dialogue sections. They were exported as .PNG files so I could easily
-                        integrate them into the visual novel scenes.
 
-                        <br /><br />
-
-                        <h2>Narrative Design</h2>
-                        The story for Dross follows the titular hermit crab man, Dross, on his quest to find treasure amongst the sea
-                        floor polluted with trash from above. During the ideation stage, the core theme of the story had to be 'Ocean Cleanup'
-                        since that was the theme of the game jam. I also wanted to do a unique anime spin by making the world of Dross feature
-                        human-like sea people. This way, it allowed me to create character designs that fit my style.
-
-                        <br /><br />
-                        I made Dross a hermit crab because the animal is known for scavenging and exploring, but also technically is always home since it
-                        carries its house on its back. Through this lens, it gave enough narrative reason for Dross the hermit crab to go out with his metal
-                        detector to look for something he deems worthwhile. While his intentions didn't start off pure, he still manages to clean up the sea
-                        along the way as the junk in each level intefered with his treasure hunting, so he dispelled the trash and waste on the ocean floor.
-                        His actions is also apparent to how each character reacts to his character, surprised or grateful for his help.
-                        <br /><br />
-                        Since this was also going to be a level-based game, I wanted each level to have its own story, featuring a new character.
-                        I wrote the screenplay for the game in a Microsoft Word document, detailing the world, lore, character descriptions, and how
-                        the story will be segmented through each level throughout the game.
-                        <br /><br />
-                        A snippet of the game's screenplay can be found in this link:
-                        <a href="Dross Script.pdf">Dross Script.pdf</a>
-                        <br /><br />
-
-                        The next step would be to integrate this into Unity. The Inkle's Ink plugin was the perfect tool to insert the story,
-                        allowing me to tag the lines with the appropriate character name and sprite emotion. Then I wrote code in C# that gets the
-                        Ink file data and parses it so I can display the respective character's name, sprite, and dialogue.
-                        <br /><br />
-                        Sample of the game's beginning dialogue in an Ink file, displayed in the Ink plugin window.
                         <br />
-                        <img src="../DrossImages/DrossInk1.PNG" />
-                        <br />
-                        The next step would be ways to trigger the dialogue during gameplay.
-                        There were two ways I did it.
-                        <br />
-                        <ul>
-                            <li>Creating invisible collision triggers the player can collide into that trigger the dialogue cutscene</li>
-                            <li>Using events and signals to programmatically start cutscenes in code</li>
-                        </ul>
-                        <br />
-                        The dialogue cutscenes were a collection of UI game objects that turn visible and invisible during gameplay. During
-                        the cutscene sections, the player's game controls were paused and the only way to progress forward was by pressing the
-                        space bar. I also made intro comic pages to establish the lore and setting of Dross. And because there are multiple romance
-                        options, there are multiple endings. There isn't any in-depth romance system, just an option selection at the end of the game,
-                        letting the player choose who they want to end the game with. The option to select other endings becomes available in the main
-                        menu as well, giving the players a way to view the other endings.
 
-                        <br /><br />
-                        <h2>Intro Gameplay</h2>
-                        <video width="854" height="480" controls="controls">
-                            <source src="../DrossImages/2024-06-18%2011-41-27.mp4" type="video/mp4" />
-                        </video>
+                        <img src="../DrossImages/DrossCharacters.png" />
+
+                        <br />
+
+                        I tried to go for a variety of colors to help make each character stand out from each other. Gawr Gura was an extra addition I included as a bonus character since I
+                        like VTubers and she fit the theme of the game as well. All the art for the characters was created in MediBang, my go-to drawing program. I also created 2-3 expressions
+                        for each character to display their emotions through the dialogue sections. They were exported as .PNG files so I could easily integrate them into the visual novel scenes.
+
+
+                        <h3>Playtesting and Iteration</h3>
+                        Playtesting revealed several areas for improvement. For instance, the collision-based dialogue triggers sometimes felt unintuitive, so
+                        I adjusted their placement to ensure players would naturally encounter them. I also fine-tuned the dialogue to ensure it flowed smoothly and maintained the game’s tone.
 
                         <br /><br />
                         <h2>Play Here: <a href="https://teitoku-lowliet.itch.io/dross">Itch.io Link</a></h2>
+                        <h2>Project Files: <a href="https://github.com/AwesomeDudex5/Dross">Github Repository</a></h2>
 
                     </p>
                 </div>
@@ -152,15 +161,15 @@
         </section>
 
         <!--
-    <footer>
-        <ul>
-            <li><a href="#">Social Media 1</a></li>
-            <li><a href="#">Social Media 2</a></li>
-            <li><a href="#">Email</a></li>
-            <li><a href="#">Phone: 123-456-7890</a></li>
-        </ul>
-    </footer>
-    -->
+        <footer>
+            <ul>
+                <li><a href="#">Social Media 1</a></li>
+                <li><a href="#">Social Media 2</a></li>
+                <li><a href="#">Email</a></li>
+                <li><a href="#">Phone: 123-456-7890</a></li>
+            </ul>
+        </footer>
+        -->
     </div>
 </body>
 </html>
