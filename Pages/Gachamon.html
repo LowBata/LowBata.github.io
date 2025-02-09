@@ -27,79 +27,132 @@
                 <div class="box3">
                     <h1>Gacha-mon</h1>
                     <p>
-                        Developed in Godot for an Alternative Controllers class, this project is inspired by gacha games and capsule
-                        toy vending machines. The game is split into two parts, the gacha roll and the battle section. Players can roll for more gacha-mons
-                        and use said gacha-mons in a turn-based battle system. The reward for winning a battle against an enemy NPC is coins which can be
-                        used for more rolls, making for a simple yet effective gameplay loop.
-
-                        <br /><br />
-
-                        <h2>Goal</h2>
-                        Since this was for an Alt Controllers class, my roles were designing the gacha-mon creatures and the enemy NPC designs, and
-                        creating a physical alternative controller utilizing  a Microbit Controller and Breadboard circuit that acts as a physical interface
-                        that interacts with the game. In addition to the controller, I would code the output from the controller that sends information to
-                        the PC. I would also work and code for the gacha system, the experience meant to emulate the gachapon machines. My partner
-                        would work on the UI/UX design and the battle system.
-
-
-                        <br /><br />
-
-                        <h2>Development</h2>
-
-                        This was a project I worked on with a partner. My partner was in charge of developing the mechanics and battle system. I was
-                        primarily in charge of monster designs, the gacha system, and the build of the alt-controller. For the alternative controller,
-                        we used a Microbit kit and a breadboard. The circuit build contains two buttons and a potentiometer. The buttons act as a confirm
-                        and cancel button for basic gameplay. The potentiometer acts as a dial to maneuver the menus and also work in parallel with the
-                        gacha system. Since we wanted to replicate a gashapon capsule toy machine, we had the potentiometer work as a crank as well.
-
-                        <br /><br />
-                        For the casing of the alternative controller, we bought a gashapon cardboard model from Amazon. We then modified it to fit the Microbit and
-                        breadboard, and then attach the dial to the potentiometer and made buttons that connect to the breadboard. There is an additional crank
-                        that is comes along with the kit. This was used outside the game to dispense a card that represents a prize for the players to win after
-                        playing our game.
-                        <br /><br />
-                        Link to Cardboard model: <a href="https://www.amazon.com/dp/B07TVLHYTL?ref=ppx_yo2ov_dt_b_fed_asin_title">Amazon Link</a>
-                        <br /><br />
-                        <img src="../GachamonImages/GachaCardboard.jpg" />
-
-                        <h3>Tinkercad Design</h3>
-
-                        <img src="../GachamonImages/Gachamon-Tinkercad.PNG" />
-                        <br />
-                        <h3>Alternative Controller Demo</h3>
-                        <video width="854" height="480" controls="controls">
-                            <source src="../GachamonImages/Video1Demo.mp4" type="video/mp4" />
-                        </video>
-                        <br /><br />
-                        The gacha system is basic but involved. To replicate the feel of a gashapon machine, we had a button act as
-                        an ‘insert coin’ action and the potentiometer act as a crank. The player would insert a coin, turn the crank all the
-                        way to the left and then turn it to the far right. The gacha animation plays and displays a monster. The system is
-                        basically a random number generator that gives a random monster each time, meaning there is a likelihood of getting duplicates.
-
-                        <br /><br />
-
-                        <h3>Monster Designs </h3>
-                        For the monster designs, we decided on a total of 6 playable monsters. The design inspirations were a mix of Pokemon and Neopets.
-                        And I themed the monsters around 3 elements, with 2 monsters representing an element. The main elements were fire, water,
-                        and grass, calling back to the original Pokemon starters. I tried to design the monsters to range from being cute to goofy
-                        and derpy. For the enemies, I initially themed the first 4 around the color purple, having varied designs. The last
-                        two enemy monsters I based around weapons, a hammer and a sword. The last one in particular was inspired by Ceruledge
-                        and Armarouge from Pokemon.
-                        <br /><br />
-                        The art program I used to draw the designs was Medibang.
-
-                        <br />
-                        <img src="../GachamonImages/Gachamon-Roster.png" />
-
                         <h2>Gameplay</h2>
 
                         <video width="854" height="480" controls="controls">
                             <source src="../GachamonImages/GameplayDemo.mp4" type="video/mp4" />
                         </video>
 
+                        <h2>Overview</h2>
+                        Developed in Godot for an Alternative Controllers class, this project is inspired by gacha games and capsule toy vending machines.
+                        The game is split into two parts, the gacha roll and the battle section. Players can roll for more gacha-mons and use said gacha-mons in a turn-based battle system.
+                        The reward for winning a battle against an enemy NPC is coins which can be used for more rolls, making for a simple yet effective gameplay loop.
+
+
+                        <h2>Goal</h2>
+                        Since this was for an Alt Controllers class, my roles were designing the gacha-mon creatures and the enemy NPC designs, and creating a physical
+                        alternative controller utilizing  a Microbit Controller and Breadboard circuit that acts as a physical interface that interacts with the game. In
+                        addition to the controller, I would code the output from the controller that sends information to the PC.. I would also work and code for the gacha system,
+                        the experience meant to emulate the gachapon machines. My partner  would work on the UI/UX design and the battle system.
+
+                        <h2>Development</h2>
+                        My primary roles were designing the gacha system, creating the alternative controller, and coding the interactions between the controller and
+                        the game. This project was a deep dive into hardware-software integration, requiring me to bridge the gap between physical input and digital gameplay.
+
+
+                        <h3>Designing the Alternative Controller</h3>
+                        <img src="../GachamonImages/Gachamon-Tinkercad.PNG" />
+
+                        <br /><br />
+
+                        The alternative controller was the centerpiece of the project, designed to emulate the tactile experience of using a gashapon machine.
+                        We used a Microbit kit and a breadboard to create a circuit with three inputs: two buttons and a potentiometer. All the parts were provided by the professor in the class.
+
+                        The first step was building and testing the circuit. Using Microbit MakeCode, I wrote block-based code to handle the inputs:
+                        <br />
+                        - The buttons acted as confirm (`A`) and cancel (`D`) inputs.
+                        <br />
+                        - The potentiometer acted as a dial, sending analog values between 0 and 1023.
+                        <br /><br />
+
+                        To simplify the process, I decided to emulate keyboard inputs instead of directly interfacing with Godot via electrical signals. This approach
+                        allowed me to bypass the complexity of translating raw electrical data into something Godot could interpret.  I went with this approach as converting electric
+                        signals into receivable digital signals, especially translating it into something Godot can interpret, was beyond my understanding and scope of the project.
+
+                        I tested the circuit by plugging the Microbit into my computer and opening a text document. Pressing the buttons and turning the potentiometer resulted in the
+                        expected keyboard inputs (`A`, `D`, and numbers 0–5). However, I noticed that the buttons sometimes registered as long presses instead of single presses.
+                        To fix this, I added a millisecond delay in the Microbit code to ensure the button press was registered as a single input.
+
+                        <br /><br />
+                        <img src="../GachamonImages/Makecode-buttoninputs.PNG" />
+                        <br />
+
+                        <h3>Gashapon Crank Mechanic</h3>
+                        Since the core of this controller is the crank mechanism, I realized the potentiometer fits the solution perfectly. The way to interact with a potentiometer is like a
+                        dial-like system similar to crank mechanisms in gashapon machines. According to documentation, the potentiometer’s analog input ranged from 0 to 1023.
+                        To use it as a dial for menu navigation, I divided the range into five sections,
+                        each corresponding to a number key (0–5). This allowed the player to navigate menus by turning the dial:
+
+                        <br />
+                        - If the current value was less than the previous value, it emulated a left movement.
+                        <br />
+                        - If the current value was greater, it emulated a right movement.
+
+                        <br /><br />
+                        <img src="../GachamonImages/MakeCode-potentiometer.PNG" />
+                        <br /><br />
+
+
+                        <h3>Assembling The Alternative Controller</h3>
+                        For the casing of the alternative controller, we bought a gashapon cardboard model from Amazon. We then modified it to fit the Microbit and breadboard,
+                        and then attach the dial to the potentiometer and made buttons that connect to the breadboard. There is an additional crank that is comes along with the kit.
+                        This was used outside the game to dispense a card that represents a prize for the players to win after playing our game.
+
+                        <h3>Alternative Controller Demo</h3>
+                        <video width="854" height="480" controls="controls">
+                            <source src="../GachamonImages/Video1Demo.mp4" type="video/mp4" />
+                        </video>
+
+                        <h3>Gacha System in Godot</h3>
+                        With the controller working, I shifted my focus to the gacha system. The system had two states:
+                        <br />
+                        1. Start State: The player is prompted to insert a coin by pressing the `A` button.
+                        <br />
+                        2. Roll State: The player turns the potentiometer to simulate cranking the gashapon machine.
+                        <br /><br />
+
+                        When the potentiometer reached its maximum value, the game played an animation and randomly selected a monster from a pool of six designs.
+                        The monster was then added to the player’s inventory, which was managed by a Game Manager in Godot. Navigation and inputs in the game can all be done from the Microbit Breadboard
+                        controller, as we essentially found a means to replicate keyboard inputs.
+
+                        <br /><br />
+
+                        The inventory system was built using Godot’s flexible **array list** structure. Each monster was represented as a node, and
+                        the array list allowed for easy addition and retrieval of monsters. The inventory was accessible across different parts of the game, including the gacha system and the battle system.
+
+                        <br /><br />
+
+                        To handle duplicates, the system checked if the monster already existed in the inventory before adding it. If there is a duplicate in the rolls, the monster isn’t added.
+
+                        <h3>Monster Designs</h3>
+                        For the monster designs, we decided on a total of 6 playable monsters. The design inspirations were a mix of Pokemon and Neopets.
+                        And I themed the monsters around 3 elements, with 2 monsters representing an element. The main elements were fire, water, and grass, calling
+                        back to the original Pokemon starters. I tried to design the monsters to range from being cute to goofy and derpy. For the enemies, I initially themed the
+                        first 4 around the color purple, having varied designs. The last two enemy monsters I based around weapons, a hammer and a sword. The last one in particular
+                        was inspired by Ceruledge and Armarouge from Pokemon.
+
+                        <br /><br />
+
+                        The art program I used to draw the designs was Medibang.
+                        <br /><br />
+                        <img src="../GachamonImages/Gachamon-Roster.png" />
+                        <br />
+
+
+                        <h3>Collaboration and Playtesting</h3>
+                        My partner handled the UI/UX design and battle system, which featured a turn-based combat system where players battled a gauntlet of enemies. 
+                        Winning battles rewarded coins, which could be used for more gacha rolls, creating a satisfying gameplay loop.  Since they were in charge of the turn-based battles.
+
+                        <br /><br />
+
+                        Playtesting revealed a few issues, such as menu navigation feeling clunky and the controller occasionally failing to register inputs. These were addressed by 
+                        fine-tuning the potentiometer’s sensitivity and adding visual feedback for the gacha crank mechanic. However, during playtests, because of our inexperience with DIY builds, we had to 
+                        constantly fix and adjust the alternative controller to ensure the play experience felt right.
+
                         <br /><br />
 
                         <h2>Download Here: <a href="https://teitoku-lowliet.itch.io/gacha-mon">Itch.io Link</a></h2>
+                        <h2>Project Files: <a href="https://github.com/AwesomeDudex5/Microbit-Gacha-Mon">Github Repository</a></h2>
 
 
                     </p>
@@ -109,15 +162,15 @@
         </section>
 
         <!--
-    <footer>
-        <ul>
-            <li><a href="#">Social Media 1</a></li>
-            <li><a href="#">Social Media 2</a></li>
-            <li><a href="#">Email</a></li>
-            <li><a href="#">Phone: 123-456-7890</a></li>
-        </ul>
-    </footer>
-    -->
+        <footer>
+            <ul>
+                <li><a href="#">Social Media 1</a></li>
+                <li><a href="#">Social Media 2</a></li>
+                <li><a href="#">Email</a></li>
+                <li><a href="#">Phone: 123-456-7890</a></li>
+            </ul>
+        </footer>
+        -->
     </div>
 </body>
 </html>
