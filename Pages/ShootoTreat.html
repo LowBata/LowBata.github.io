@@ -27,90 +27,152 @@
                 <div class="box3">
                     <h1>Shoot o' Treat</h1>
                     <p>
-
-                        A Halloween themed first-person shooter. It is a wave based survival game, you have 3 weapons available to you.
-                        Ammo is scarce and the night terrors are relentless. Fend off the night against evil candy out to get you.
-                        Explore the village and survive as long as you can, as waves get harder with each passing.
-
-                        <br /><br />
-                        Developed in Unity, with assests from various sources such as the Unity Asset Store and Itch.io store. Enemy uses BreadCrumb
-                        AI for pathfinding. It was a solo project that I wanted to do for the spirit of Halloween.
-
-                        <br />
-
-                        <h2>Goal</h2>
-                        I wanted to practice level and environment design, as well as designing first person shooter controls.
-
-                        <br />
-
-                        <h2>Development</h2>
-                        The game was developed in Unity and coded in C#. I started development by getting a basic first-person controller
-                        established. I then moved onto basic shooting mechanics. The game only has 3 weapons, a pistol, submachine gun, and shotgun.
-                        The idea behind this design is to balance weapon choices. Pistol would have unlimited ammo but has a low fire rate and damage
-                        output. The SMG would fire faster with slightly lower damage. The shotgun will fire slower with small ammo capacity and range,
-                        but makes up for it in high damage output. These variables would be adjusted during playtests, such as ammo amount, fire rate,
-                        and damage. The weapons are hit scan, spawning a particle effect to indicate where the bullets flew and landed.
-
-                        <br /><br />
-
-                        Next I designed the level. The main level is comprised of 3 parts, the graveyard, the town, and the port. I first made a
-                        sketch of the layout. Then I gathered free 3d models themed around fantasy from various sources like the Unity Asset Store
-                        and Itch.io asset store. To make the aesthetic cohesive, I went with low-poly models with flat colors. I also used the same
-                        types of models for the guns and enemies. With all the models gathered, I designed the level and tested to make sure movement
-                        was feasible in the level.
-
-                        <br /><br />
-                        <table>
-                            <tr>
-                                <td>
-                                    <img src="../ShootoTreatImages/Image1.png" alt="image1" width="300" height="300" />
-                                </td>
-                                <td>
-                                    <img src="../ShootoTreatImages/Image2.png" alt="image2" width="300" height="300" />
-                                </td>
-                                <td>
-                                    <img src="../ShootoTreatImages/Image3.png" alt="image3" width="300" height="300" />
-                                </td>
-
-                            </tr>
-                        </table>
-
-                        <br />
-
-                        <img src="../ShootoTreatImages/LevelMap.png" />
-
-                        <br /><br />
-
-                        To add more to the scene, I placed low poly trees around the map and as well as other decor. Although the map is secure, to
-                        ensure the player doesn't go out of bounds, I placed invisble walls around the map in areas like buildings, the beach, and fences.
-                        This is to make sure the player stays within the playable area.
-
-                        <br /><br />
-
-                        Since the game was themed around Halloween, I made the enemies into candy and sweet treats. The enemy would have
-                        two states: wander an area, follow player if within range. The enemies used Breadcrumb AI, which is free in the Unity store.
-                        The player will periodically leave instances of path nodes behind them, and the Breadcrumb AI will follow a trail behind the
-                        player if they are in range. Variables such as damage amount, health, movement speed, and  detection ranged were adjusted
-                        during playtesting.
-
-                        <br /><br />
-
-                        Since this is a wave-based game, the spawn system took awhile to figure out. Basically, the enemies spawn within random
-                        spawn points placed around the map. I chose specific points to place as I didn’t want the enemy to glitch into buildings.
-                        There is a total enemy counter that is increased after each wave. There are unlimited waves, so the player will keep playing
-                        until they die. In case enemies do spawn outside the map, I made invisible colliders that will cause the enemies to be destroyed
-                        and increment the counter accordingly.
-
-
                         <h2>Gameplay</h2>
 
                         <video width="854" height="480" controls="controls">
                             <source src="../ShootoTreatImages/ShootoTreatGameplay.mp4" type="video/mp4" />
                         </video>
 
+                        <h2>Overview</h2>
+                        A Halloween themed first-person shooter. It is a wave based survival game, you have 3 weapons available to you. Ammo is scarce and the night terrors are relentless.
+                        Fend off the night against evil candy out to get you. Explore the village and survive as long as you can, as waves get harder with each passing.
+
+                        <br /><br />
+
+                        Developed in Unity, with assets from various sources. Enemy uses BreadCrumb AI for pathfinding. It was a solo project that I wanted to do for the spirit of Halloween.
+
+                        <h2>Goal</h2>
+                        I wanted to practice level design, constructing a cohesive environment. This project was also an endeavor to explore developing First Person Shooter controls and gameplay.
+
+                        <h2>Development</h2>
+                        Shoot o Treat was a passion project that combined my love for Halloween and first-person shooters.
+                        My goal was to create a wave-based survival game with a spooky twist, where players fend off relentless waves of candy-themed enemies.
+                        The development process was a mix of technical challenges and creative problem-solving, particularly in designing first-person controls, enemy AI, and level layout.
+                        This project allowed me to practice level and environment design while refining my skills in Unity and C#.
+
+                        <h3>Designing First-Person Mechanics</h3>
+                        The foundation of this project is smooth and responsive controls, and this was where I started. Implementing first-person movement
+                        and camera rotation seemed straightforward at first, but getting it to feel right was a challenge. I began by parenting the camera to the
+                        player object, making it a child of a pivot point. This setup allowed me to programmatically rotate the camera based on mouse input, creating the
+                        illusion of looking around. However, the initial implementation felt clunky—the camera rotation was either too slow or too fast, and the movement didn’t feel natural.
+
+                        <br /><br />
+
+                        <img src="../ShootoTreatImages/Code-CameraControl.PNG" />
+
+                        <br /><br />
+
+                        To fix this, I spent time tweaking the sensitivity values for mouse input and adjusting the camera’s rotation speed. I also experimented with
+                        smoothing algorithms to eliminate jittery movements. For player movement, I used a force-based system, which introduced its own set of challenges.
+                        Climbing slopes felt sluggish, while descending slopes made the player feel like they were floating. I adjusted gravity and friction values iteratively,
+                        testing different configurations until the movement felt tight and responsive.
+
+                        <br /><br />
+                        <img src="../ShootoTreatImages/Code-PlayerMovement.PNG" />
+                        <br />
+
+
+                        <h3>Going Into Shooting Gameplay</h3>
+                        The shooting mechanics were built around a hitscan system. A raycast was fired from the center of the camera, and if it hit an enemy’s hitbox,
+                        damage was applied. To add variety, I designed three weapon types:
+
+                        <br />
+                        <ul>
+                            <li>Pistol: Unlimited ammo, low fire rate, and moderate damage. This was intended as a reliable fallback weapon.</li>
+                            <li>Submachine Gun (SMG): Faster fire rate, lower damage, and limited ammo. This weapon was ideal for dealing with groups of enemies.</li>
+                            <li>Shotgun: High damage, slow fire rate, and limited ammo with a short range. This weapon was perfect for close-quarters combat.</li>
+                        </ul>
+                        <br />
+
+                        The Gun Controller Scripts manages the states of the gun in hand currently. It controls which gun is selected
+                        through the mouse wheel, selecting based on the index of the gun that is under the player. It also applies the appropriate animations.
+
+                        <br /><br />
+                        <img src="../ShootoTreatImages/Code-GunController.PNG" />
+                        <br /><br />
+
+                        Balancing these weapons required extensive playtesting. I adjusted fire rates, ammo counts, and damage values to ensure each weapon felt distinct and
+                        useful in different scenarios. One of the biggest challenges was ensuring the pistol felt viable without making the other weapons obsolete. I decided
+                        to give the pistol unlimited ammo, which provided a safety net for players while still encouraging them to use the SMG and shotgun strategically.
+
+                        <br /><br />
+
+                        One issue I encountered was with the gun sway animation. Initially, the sway animation would restart with every step, making it look unnatural.
+                        I realized I was calling the “play sway animation” method continuously while the player was moving. To fix this, I introduced a `isMoving` boolean.
+                        The animation would only start when the player pressed a movement key, loop while `isMoving` was true, and stop when the player stopped moving or started shooting.
+                        This small change made the animation feel much more polished and immersive.
+
+                        <br /><br />
+                        <img src="../ShootoTreatImages/Code-ApplyAnims.PNG" />
+                        <br />
+
+                        <h3>Designing the Level and Environment</h3>
+                        With the core mechanics in place, I shifted my focus to level design. The game is set in a Halloween-themed
+                        village divided into three main areas: the graveyard, the town, and the port. Each area was designed to offer a unique gameplay experience
+                        while maintaining a cohesive aesthetic.
+
+                        <br /><br />
+                        The **graveyard** is elevated, requiring players to climb uphill. This area is dense with obstacles like tombstones and trees,
+                        creating a claustrophobic atmosphere. The **town** is set at ground level, with open spaces that allow players to maneuver freely.
+                        This area is the most versatile, offering plenty of room for combat and exploration. The **port** is connected to the town by a bridge
+                        and to the graveyard by a hill. It features uneven terrain and open spaces, making it a dynamic area for combat.
+
+                        <br /><br />
+                              <img src="../ShootoTreatImages/3-locations.PNG" />
+                        <br /><br />
+
+                        To maintain performance, I used low-poly models with flat colors, sourced from the Unity Asset Store and itch.io. I sketched the level layout beforehand,
+                        ensuring each area had a distinct visual identity while maintaining a cohesive overall look. I placed invisible walls around the map to
+                        prevent players from going out of bounds. Since the game lacked a jumping mechanic due to heavy gravity, these walls ensured players stayed within the playable area.
+
+                        <br /><br />
+                        <img src="../ShootoTreatImages/LevelMap.png" />
+                        <br />
+
+                        <h3>Designing Enemy AI</h3>
+                        The enemies in Shoot o Treat are candy-themed, adding a playful twist to the Halloween theme. I wanted a simple AI system where enemies
+                        would follow the player if within range. However, the dynamic terrain posed a challenge for pathfinding.
+
+                        <br /><br />
+
+                        I discovered a free Unity plugin called **Breadcrumb AI**, which allowed enemies to follow a trail of invisible “breadcrumbs” left by the player.
+                        This system was perfect for the game’s needs, as it provided a lightweight and efficient way to handle pathfinding. I adjusted the code so enemies
+                        would only start following if the player was within a certain range. Outside this range, enemies would idle in place.
+
+                        <br /><br />
+                        <img src="../ShootoTreatImages/Code-BreaccrumbAI.PNG" />
+                        <br />
+                        <img src="../ShootoTreatImages/Code-BreaccrumbAI2.PNG" />
+                        <br /><br />
+
+                        Playtesting was crucial to fine-tuning the detection range and ensuring enemies behaved as expected.
+                        I also added a state system to handle transitions between idle and chase states, making the AI feel more dynamic.
+                        For example, enemies would pause briefly before chasing the player, giving the player a moment to react.
+                        This small detail added a layer of tension to the gameplay.
+
+                        <h3>Building the Wave System</h3>
+                        As a wave-based shooter, *Shoot o Treat* required a robust spawn system. The game features infinite waves,
+                        with the number of enemies increasing after each wave. However, I ran into issues with enemy spawning. Enemies would
+                        sometimes spawn below the ground or fly into the sky due to incorrect spawn point placement.
+
+                        <br /><br />
+
+                        To address this, I added an invisible ceiling to prevent enemies from spawning too high, allowing gravity to pull
+                        them down naturally. For enemies that spawned below the ground, I placed an invisible collision box at the bottom of the map.
+                        If an enemy collided with this box, it would be destroyed, and the enemy counter would increment accordingly. This solution ensured that
+                        the wave system remained functional, even if enemies spawned in unintended locations.
+
+                        <h3>Playtesting and Iteration</h3>
+                        Playtesting revealed several areas for improvement. For example, the spawn system needed adjustments to 
+                        ensure enemies appeared in logical locations. I also fine-tuned weapon balance and enemy behavior to create a 
+                        challenging but fair experience. One of the most rewarding aspects of development was seeing how players reacted to the game’s 
+                        difficulty curve. Early waves were designed to be manageable, allowing players to get comfortable with the mechanics. As the waves 
+                        progressed, the game became increasingly intense, pushing players to strategize and make the most of their limited resources.
+
                         <br /><br />
 
                         <h2>Download: <a href="https://teitoku-lowliet.itch.io/shoot-o-treat">Itch.io Link</a></h2>
+                        <h2>Project Files: <a href="https://github.com/AwesomeDudex5/Shoot-o-Treat">Github Repository</a></h2>
 
                     </p>
                 </div>
