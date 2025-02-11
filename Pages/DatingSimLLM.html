@@ -56,13 +56,21 @@
 
                         <br /><br />
 
-                        I stripped the project down to focus on the **Gemini 1.5 chat feature**, which offered better memory retention and more creative responses.
-                        To test the system, I created a simple UI with a text input field and a text box to display the chatbot’s responses. When the player typed a message and
-                        hit “Send,” the input was sent to Gemini, and the response appeared in the text box. It was a small victory, but it proved the concept worked.
+                        To connect to the Gemini 1.5 API, I used Godot’s HTTPRequest node to send POST requests to the Gemini API endpoint. The API key, stored in a
+                        settings.json file, was loaded at runtime and appended to the request URL. The request body included the conversation history and a user prompt, formatted as a
+                        JSON object. This allowed the API to generate context-aware responses based on the ongoing dialogue.
 
                         <br /><br />
-                        <img src="../DatingSimLLM/DSPIC7.PNG" />
+                        <img src="../DatingSimLLM/Code-GeminiCConnection.PNG" />
+                        <br /><br />
 
+                        Once the response was received, the script parsed the JSON output to extract the AI’s message, emotion, and emotional value.
+                        The _on_request_completed function handled the response, updating the UI with the AI’s dialogue and adjusting the character’s sprite and happiness
+                        level based on the parsed emotion. This seamless integration enabled dynamic, AI-driven conversations that shaped the gameplay experience.
+
+
+                        <br /><br />
+                        <img src="../DatingSimLLM/Code-GeminiResponse.PNG" />
                         <br />
 
                         <h3>
