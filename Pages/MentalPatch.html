@@ -61,6 +61,29 @@
                         requests and parse responses. Using this as a reference, I set up the initial connection to the Gemini API by making URL calls with my
                         generated API key. The first call was crucial—it established the connection and allowed me to send prompts to the Gemini 1.5 model.
 
+                        <br /><br />
+
+                        To connect to the Gemini API, I used Godot’s HTTPRequest node to send POST requests to the Gemini API endpoint. The API key, stored in a settings.json file,
+                        was loaded at runtime and appended to the request URL. The request body included the conversation history and a user prompt, formatted as a JSON object.
+                        This allowed the API to generate context-aware responses based on the ongoing dialogue. Once the response was received, the script parsed the JSON output to
+                        extract the AI’s message, emotion, and emotional value, updating the UI and gameplay systems accordingly.
+
+                        <br /><br />
+                        <img src="../MentalPatchImages/Code-RequestChat.PNG" />
+                        <br /><br />
+
+                        The _request_chat function constructs the request URL and body, including the conversation history and the user’s prompt. 
+                        The request is sent to the Gemini API using the HTTPRequest node. The _on_request_completed function handles the API response. It parses the JSON data, 
+                        extracts the AI’s message, emotion, and emotional value, and updates the game state accordingly. The process_sprite function updates the patient’s sprite 
+                        based on the parsed emotion, while check_happiness checks if the happiness level has reached a win or fail condition.
+
+                        <br /><br />
+                        <img src="../MentalPatchImages/Code-RequestComplete.PNG" />
+                        <br />
+                        <img src="../MentalPatchImages/CodeScreenshot3.PNG" />
+                        <br />
+
+
                         <h3>Crafting the AI’s Behavior</h3>
                         The next step was to design the AI’s behavior to fit the role it was intended in the game, as a therapist. I began by testing prompts to ensure the
                         AI could roleplay as a patient effectively. The initial prompt included:
@@ -134,7 +157,7 @@
 
                         <br /><br />
 
-                        Also if the AI is unable to generate a response for any reason, I set a default message in the code that will be played automatically. The message is 
+                        Also if the AI is unable to generate a response for any reason, I set a default message in the code that will be played automatically. The message is
                         to encourage the player to send in a similar response again as the AI will be able to generate a response afterwards.
 
                         <h2>Project Files</h2>
