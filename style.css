@@ -1,3 +1,6 @@
+/* ===================== */
+/* General Styles        */
+/* ===================== */
 body {
     font-family: sans-serif;
     margin: 0;
@@ -5,174 +8,207 @@ body {
     background-repeat: repeat;
 }
 
+a {
+    color: midnightblue;
+    text-decoration: none;
+}
+
+/* ===================== */
+/* Container             */
+/* ===================== */
 .container {
-    max-width: 42%;
+    max-width: 90%; /* Maximum width for desktop screens */
     margin: 0 auto;
-    padding: 0rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: deeppink;
+    background-color: pink;
 }
 
-    .container a {
-        color: midnightblue;
+/* Adjust width for desktop screens */
+@media (min-width: 1024px) {
+    .container {
+        width: 50%; /* Set width to 50% on larger screens */
     }
+}
 
+/* ===================== */
+/* Banner                */
+/* ===================== */
 .banner {
     color: white;
     width: 100%;
     text-align: center;
-    padding: 0rem;
+    padding: 1rem 0;
 }
 
+/* ===================== */
+/* Header and Navigation */
+/* ===================== */
 header {
     width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 1rem 0;
 }
 
 nav {
     display: flex;
-    justify-content: space-around; /* Distribute links evenly within the container */
-    width: 100%; /* Ensure nav takes up the full width of the container */
+    justify-content: space-around;
+    width: 100%;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
 
     nav a {
         color: midnightblue;
         text-decoration: none;
-        padding: 1rem; /* Adjust padding if needed */
-        text-align: center; /* Center align the text */
+        padding: 0.75rem;
+        text-align: center;
         background-color: white;
-        flex: 1; /* Allow links to grow and take up equal space */
-        margin: 0 0.5rem; /* Add a margin between links */
-        border-radius: 10px; /* Adjust the value for more or less rounded corners */
+        flex: 1;
+        margin: 0.25rem;
+        border-radius: 10px;
     }
 
-
+/* ===================== */
+/* Project Boxes         */
+/* ===================== */
 .boxes {
-    display: flex;
-    flex-direction: column; /* Changed to column for stacking */
+    display: grid;
+    gap: 1.5rem; /* Spacing between boxes */
+    width: 100%;
+}
+
+/* Default: 1 column layout for mobile */
+.boxes {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+/* 2 columns for tablets */
+@media (min-width: 768px) {
+    .boxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 3 columns for desktop */
+@media (min-width: 1024px) {
+    .boxes {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .box {
-    display: flex; /* Make box a flex container */
-    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: pink;
 }
 
-.box1 .title {
-    color: white; /* White text color */
-    font-weight: bold; /* Bold text */
-    font-size: 30px;
-    text-align: center; /* Align text within title to the right */
-    padding-bottom: 2rem;
+/* Colors for box white and box pink */
+.pink {
+    background-color: pink;
 }
 
 .white {
     background-color: white;
 }
 
-.pink {
-    background-color: pink;
-}
-
-.box a,
-.box p {
-    flex: none; /* Make both elements flexible and share space */
-}
-
-.box img {
-    margin: 0 auto;
-}
-
 .box1 {
-    display: flex; /* Make box1 a flex container */
-    flex-direction: column; /* Arrange elements vertically (optional) */
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
+    flex: 1;
 }
+
+    .box1 .title {
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
 
     .box1 img {
-        width: 400px;
-        height: 300px;
-        float: right;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
     }
 
 .box2 {
-    display: flex; /* Make box2 a flex container */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center items vertically */
-    align-items: center; /* Center the whole block horizontally */
-    text-align: center; /* Center the entire box content */
-    padding: 2rem; /* Adjust padding if needed */
-    flex: 1; /* Allow it to fill available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    flex: 1;
 }
 
     .box2 p {
-        text-align: left; /* Left align the text within the <p> */
-        /*  max-width: 600px; Set a max width to keep it from stretching too much */
-        margin: 0 auto; /* Center the paragraph inside the box2 container */
+        text-align: left;
+        margin: 0;
     }
 
-
-
-.box3 {
-    padding: 2rem;
+/* ===================== */
+/* Project Tags          */
+/* ===================== */
+.rect-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
 }
 
-    .box3 img {
+    .rect-container div {
+        padding: 0.5rem 1rem;
+        color: white;
+        border-radius: 10px;
+        font-size: 0.875rem;
+        text-align: center;
+        width: fit-content;
+    }
+
+.AIrect {
+    background-color: #cc0000;
+}
+
+.ARTrect {
+    background-color: #cc00cc;
+}
+
+.PROGrect {
+    background-color: #003cb3;
+}
+
+.NARRATIVErect {
+    background-color: #e67300;
+}
+
+.LEVELrect {
+    background-color: #009900;
+}
+
+/* ===================== */
+/* Media Handling        */
+/* ===================== */
+.box3 {
+    padding: 1rem;
+}
+
+    .box3 img,
+    .box3 video {
         max-width: 100%;
         height: auto;
         display: block;
         margin: 0 auto;
+        border-radius: 10px;
     }
 
     .box3 video {
-        max-width: 100%; /* Let the video scale down within the box */
-        height: auto; /* Maintain aspect ratio */
-        display: block; /* Remove extra inline spacing */
-        margin: 0 auto; /* Center the video horizontally */
-        object-fit: contain; /* Keep the entire video visible inside its container */
+        object-fit: contain;
     }
-
-/*PROJECT TAGS*/
-/* Make this new container flex to display rects side by side */
-.rect-container {
-    display: flex; /* Makes the child elements (AIrect and ARTrect) align horizontally */
-    justify-content: center; /* Centers the elements horizontally */
-    gap: 5px; /* Adds space between the rectangles */
-    margin-top: 1rem; /* Adds space above the row */
-}
-
-/*PROJECT TAGS*/
-.AIrect, .ARTrect, .PROGrect, .NARRATIVErect, .LEVELrect {
-    display: block; /* Ensure the rect takes up the full width and stays below the text */
-    padding: 10px; /* Adjust padding for size */
-    color: white; /* Text color */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 15px; /* Font size */
-    text-align: center; /* Center text inside the rectangle */
-    width: fit-content; /* Ensures the width fits around the content */
-}
-
-/* Custom styles for each rectangle */
-.AIrect {
-    background-color: #cc0000; /* Background color */
-}
-
-.ARTrect {
-    background-color: #cc00cc; /* Background color */
-}
-
-.PROGrect {
-    background-color: #003cb3; /* Background color */
-}
-
-.NARRATIVErect {
-    background-color: #e67300; /* Background color */
-}
-
-.LEVELrect {
-    background-color: #009900; /* Background color */
-}
