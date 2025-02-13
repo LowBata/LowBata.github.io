@@ -43,16 +43,30 @@ a {
 /* ===================== */
 .banner {
     font-family: "Stylish", serif;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Fluid font size */
     color: white;
     width: 100%;
     text-align: center;
     padding: 0.25rem 0;
 }
 
-    .banner h1, .banner h2, .banner h3 {
+    .banner h1, .banner h3 {
         margin: 0.5rem;
     }
+
+/* Adjust font size for smaller screens */
+@media (max-width: 768px) {
+    .banner {
+        font-size: clamp(1.2rem, 4vw, 2rem); /* Smaller fluid font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        font-size: clamp(1rem, 3.5vw, 1.5rem); /* Even smaller fluid font size */
+    }
+}
+
 
 /* ===================== */
 /* Header and Navigation */
