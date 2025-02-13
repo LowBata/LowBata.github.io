@@ -10,7 +10,7 @@
     <div class="container">
         <div class="banner">
             <h1>Lowell Batacan</h1>
-            <h3>Programmer</h3>
+            <h3>Programmer | Game Designer</h3>
         </div>
         <header>
             <nav>
@@ -23,157 +23,160 @@
 
 
         <!--<section class="boxes">-->
-            <div class="box white">
-                <div class="box3">
-                    <h1>Dross</h1>
-                    <p>
-                        <h2>Intro Gameplay</h2>
-                        <!--<video width="854" height="480" controls="controls">
-                            <source src="../DrossImages/2024-06-18%2011-41-27.mp4" type="video/mp4" />
-                        </video>-->
-                        <video width="854" height="480" controls="controls">
-                            <source src="../DrossImages/Level%201%20Gameplay.mp4" type="video/mp4" />
-                        </video>
+        <div class="box white">
+            <div class="box3">
+                <h1>Dross</h1>
+                <p>
+                    <h2>Intro Gameplay</h2>
+                    <!--<video width="854" height="480" controls="controls">
+                    <source src="../DrossImages/2024-06-18%2011-41-27.mp4" type="video/mp4" />
+                </video>-->
+                    <video width="854" height="480" controls="controls">
+                        <source src="../DrossImages/Level%201%20Gameplay.mp4" type="video/mp4" />
+                    </video>
 
 
-                        <h2>Overview</h2>
-                        A top down 2d game that combines pixel and hand drawn art. Developed for the game jam, Sea Jam 2021, as part of MrBeast's ocean clean up activity,
-                        Dross follows the titular humanized hermit crab who acquired a metal detector and uses it to try to find treasure while accidentally cleaning up the sea.
+                    <h2>Overview</h2>
+                    A top down 2d game that combines pixel and hand drawn art. Developed for the game jam, Sea Jam 2021, as part of MrBeast's ocean clean up activity,
+                    Dross follows the titular humanized hermit crab who acquired a metal detector and uses it to try to find treasure while accidentally cleaning up the sea.
 
-                        <h2>Goal</h2>
-                        I wanted to create a simple gameplay loop with priorities toward the art and story. The pixel art was made in Aseprite and the character art was made in Medibang.
-                        The overall theme of the game is to promote beach cleanup, and that even with ulterior motives, one can make their environment a better place.
+                    <h2>Goal</h2>
+                    I wanted to create a simple gameplay loop with priorities toward the art and story. The pixel art was made in Aseprite and the character art was made in Medibang.
+                    The overall theme of the game is to promote beach cleanup, and that even with ulterior motives, one can make their environment a better place.
 
-                        <h2>Development</h2>
-                        Dross was born out of a desire to create a game that combined a simple, engaging gameplay loop with a character-driven story.
-                        With the theme of ocean cleanup as the foundation, I aimed to design a game that felt both meaningful and fun to play. Given the one-month time limit for Sea Jam 2021,
-                        I leaned into my strengths: top-down 2D games and dialogue systems.
+                    <h2>Development</h2>
+                    Dross was born out of a desire to create a game that combined a simple, engaging gameplay loop with a character-driven story.
+                    With the theme of ocean cleanup as the foundation, I aimed to design a game that felt both meaningful and fun to play. Given the one-month time limit for Sea Jam 2021,
+                    I leaned into my strengths: top-down 2D games and dialogue systems.
 
-                        <h3>Designing the Core Mechanics</h3>
-                        The first step was to establish the core gameplay loop. I wanted a simple mechanic that aligned with the ocean cleanup theme, so I settled on having the
-                        player walk up to trash and pick it up. This required implementing basic top-down movement and collision detection. Using Unity’s 2D physics system,
-                        I created a player controller with movement inputs and a collision box to interact with trash objects.
+                    <h3>Designing the Core Mechanics</h3>
+                    The first step was to establish the core gameplay loop. I wanted a simple mechanic that aligned with the ocean cleanup theme, so I settled on having the
+                    player walk up to trash and pick it up. This required implementing basic top-down movement and collision detection. Using Unity’s 2D physics system,
+                    I created a player controller with movement inputs and a collision box to interact with trash objects.
 
-                        <br /><br />
+                    <br /><br />
 
-                        However, I quickly ran into a problem: how would the game track the trash collected in each level? My initial thought was to have the game manager
-                        search for all objects tagged as "trash," but I realized this approach would be inefficient and costly, especially as the number of trash objects increased.
+                    However, I quickly ran into a problem: how would the game track the trash collected in each level? My initial thought was to have the game manager
+                    search for all objects tagged as "trash," but I realized this approach would be inefficient and costly, especially as the number of trash objects increased.
 
-                        <br /><br />
+                    <br /><br />
 
-                        To solve this, I designed an event system. When a trash object is spawned, it emits a signal, and the game manager listens for these signals.
-                        This way, the game manager only tracks relevant objects, reducing performance overhead. The game manager also handles displaying player progress,
-                        such as the number of trash items collected and the remaining items in the level.
+                    To solve this, I designed an event system. When a trash object is spawned, it emits a signal, and the game manager listens for these signals.
+                    This way, the game manager only tracks relevant objects, reducing performance overhead. The game manager also handles displaying player progress,
+                    such as the number of trash items collected and the remaining items in the level.
 
-                        <br />
-                        <img src="../DrossImages/Code-TrashEvents.PNG" />
-                        <br />
-
-
-                        <h3>Structuring the Game</h3>
-                        Since Dross was designed as a level-based game, I needed a way to manage story progression alongside gameplay. I decided to use visual novel-style scenes to
-                        tell the story, with scenes triggered at the beginning and end of each level. The game manager would handle these transitions, ensuring the story unfolded seamlessly.
-
-                        <br /><br />
-
-                        However, this system felt too rigid. It didn’t allow for dialogue scenes to occur during gameplay, which limited the narrative’s dynamism. To address this,
-                        I redesigned the dialogue system to include collision-based triggers. Levels were designed with narrow pathways or specific areas where players would naturally
-                        encounter these triggers. Once the final trigger in a level was activated, the game manager would transition to the next scene.
+                    <br />
+                    <img src="../DrossImages/Code-TrashEvents.PNG" />
+                    <br />
 
 
-                        <h3>Building the Dialogue System</h3>
-                        For the dialogue system, I wanted something more dynamic than manually managing long strings or parsing text files.
-                        Drawing from my previous project,<a href="HanaePage.html">Royal Flower Picker Hanae</a>, I decided to use the **Inkle’s Ink Integration** plugin. This plugin allowed me to
-                        write dialogue in a structured format, with tags for character names, expressions, and other metadata.
+                    <h3>Structuring the Game</h3>
+                    Since Dross was designed as a level-based game, I needed a way to manage story progression alongside gameplay. I decided to use visual novel-style scenes to
+                    tell the story, with scenes triggered at the beginning and end of each level. The game manager would handle these transitions, ensuring the story unfolded seamlessly.
 
-                        <br /><br />
+                    <br /><br />
 
-                        <img src="../DrossImages/DrossInk1.PNG" />
-                        <br />
-                        <img src="../DrossImages/Code-DialogueMode.PNG" />
-                        <br />
-                        <img src="../DrossImages/Code-parseDialogue.PNG" />
-                        <br /><br />
-
-                        I wrote a script to process Ink objects, extracting the relevant data and connecting it to the UI system. This enabled the game to display visual novel-style
-                        scenes with character sprites, names, and dialogue. To manage character sprites, I created a Character Manager object, which stored an array list of character classes.
-                        Each class contained the character’s name and their sprites for different expressions.
-
-                        <br /><br />
-
-                        While this approach worked, it had its limitations. For example, if I needed to change a character’s name, I had to update it in both the Character Manager and
-                        the Ink dialogue files. This lack of flexibility was a trade-off I accepted due to the time constraints of the game jam.
-
-                        <br /><br />
-                        <img src="../DrossImages/code-dialoguemanager.PNG" />
-
-                        <br />
-                        <img src="../DrossImages/Diagram Dialgoue Systems.PNG" />
-                        <br />
+                    However, this system felt too rigid. It didn’t allow for dialogue scenes to occur during gameplay, which limited the narrative’s dynamism. To address this,
+                    I redesigned the dialogue system to include collision-based triggers. Levels were designed with narrow pathways or specific areas where players would naturally
+                    encounter these triggers. Once the final trigger in a level was activated, the game manager would transition to the next scene.
 
 
-                        <h3>Designing the Characters and Story</h3>
-                        The narrative and character design were central to *Dross*. I chose a hermit crab as the protagonist because of their natural scavenging behavior,
-                        which fit the theme of collecting treasure (and inadvertently cleaning up the ocean). For the supporting cast, I researched various fish and sea creatures,
-                        designing each character with a distinct color palette and personality.
+                    <h3>Building the Dialogue System</h3>
+                    For the dialogue system, I wanted something more dynamic than manually managing long strings or parsing text files.
+                    Drawing from my previous project,<a href="HanaePage.html">Royal Flower Picker Hanae</a>, I decided to use the **Inkle’s Ink Integration** plugin. This plugin allowed me to
+                    write dialogue in a structured format, with tags for character names, expressions, and other metadata.
 
-                        <br /><br />
+                    <br /><br />
 
-                        The story was structured around each level introducing a new character, with their personal conflicts tied to the ocean’s pollution.
-                        This approach allowed me to weave the cleanup theme into the narrative while keeping the focus on the characters.
+                    <img src="../DrossImages/DrossInk1.PNG" />
+                    <br />
+                    <img src="../DrossImages/Code-DialogueMode.PNG" />
+                    <br />
+                    <img src="../DrossImages/Code-parseDialogue.PNG" />
+                    <br /><br />
 
-                        <br /><br />
+                    I wrote a script to process Ink objects, extracting the relevant data and connecting it to the UI system. This enabled the game to display visual novel-style
+                    scenes with character sprites, names, and dialogue. To manage character sprites, I created a Character Manager object, which stored an array list of character classes.
+                    Each class contained the character’s name and their sprites for different expressions.
 
-                        Because I was setting this within the ocean, I designed the characters around various fish and sea creatures, each design having a distinct
-                        motif to help indicate what animal they were based on.
+                    <br /><br />
 
-                        <br />
+                    While this approach worked, it had its limitations. For example, if I needed to change a character’s name, I had to update it in both the Character Manager and
+                    the Ink dialogue files. This lack of flexibility was a trade-off I accepted due to the time constraints of the game jam.
 
-                        <ul>
-                            <li>Dross - Hermit Crab</li>
-                            <li>Sai - Red Salmon</li>
-                            <li>Mancy - Blue Mackerel</li>
-                            <li>Tillie - Sea Turtle</li>
-                            <li>Angela - Angler Fish</li>
-                            <li>Sera - Starfish</li>
-                            <li>Gawr Gura - Shark</li>
-                        </ul>
+                    <br /><br />
+                    <img src="../DrossImages/code-dialoguemanager.PNG" />
 
-                        <br />
-
-                        <img src="../DrossImages/DrossCharacters.png" />
-
-                        <br />
-
-                        I tried to go for a variety of colors to help make each character stand out from each other. Gawr Gura was an extra addition I included as a bonus character since I
-                        like VTubers and she fit the theme of the game as well. All the art for the characters was created in MediBang, my go-to drawing program. I also created 2-3 expressions
-                        for each character to display their emotions through the dialogue sections. They were exported as .PNG files so I could easily integrate them into the visual novel scenes.
+                    <br />
+                    <img src="../DrossImages/Diagram Dialgoue Systems.PNG" />
+                    <br />
 
 
-                        <h3>Playtesting and Iteration</h3>
-                        Playtesting revealed several areas for improvement. For instance, the collision-based dialogue triggers sometimes felt unintuitive, so
-                        I adjusted their placement to ensure players would naturally encounter them. I also fine-tuned the dialogue to ensure it flowed smoothly and maintained the game’s tone.
+                    <h3>Designing the Characters and Story</h3>
+                    The narrative and character design were central to *Dross*. I chose a hermit crab as the protagonist because of their natural scavenging behavior,
+                    which fit the theme of collecting treasure (and inadvertently cleaning up the ocean). For the supporting cast, I researched various fish and sea creatures,
+                    designing each character with a distinct color palette and personality.
 
-                        <br /><br />
-                        <h2>Play Here: <a href="https://teitoku-lowliet.itch.io/dross">Itch.io Link</a></h2>
-                        <h2>Project Files: <a href="https://github.com/AwesomeDudex5/Dross">Github Repository</a></h2>
+                    <br /><br />
 
-                    </p>
-                </div>
+                    The story was structured around each level introducing a new character, with their personal conflicts tied to the ocean’s pollution.
+                    This approach allowed me to weave the cleanup theme into the narrative while keeping the focus on the characters.
 
+                    <br /><br />
+
+                    Because I was setting this within the ocean, I designed the characters around various fish and sea creatures, each design having a distinct
+                    motif to help indicate what animal they were based on.
+
+                    <br />
+
+                    <ul>
+                        <li>Dross - Hermit Crab</li>
+                        <li>Sai - Red Salmon</li>
+                        <li>Mancy - Blue Mackerel</li>
+                        <li>Tillie - Sea Turtle</li>
+                        <li>Angela - Angler Fish</li>
+                        <li>Sera - Starfish</li>
+                        <li>Gawr Gura - Shark</li>
+                    </ul>
+
+                    <br />
+
+                    <img src="../DrossImages/DrossCharacters.png" />
+
+                    <br />
+
+                    I tried to go for a variety of colors to help make each character stand out from each other. Gawr Gura was an extra addition I included as a bonus character since I
+                    like VTubers and she fit the theme of the game as well. All the art for the characters was created in MediBang, my go-to drawing program. I also created 2-3 expressions
+                    for each character to display their emotions through the dialogue sections. They were exported as .PNG files so I could easily integrate them into the visual novel scenes.
+
+
+                    <h3>Playtesting and Iteration</h3>
+                    Playtesting revealed several areas for improvement. For instance, the collision-based dialogue triggers sometimes felt unintuitive, so
+                    I adjusted their placement to ensure players would naturally encounter them. I also fine-tuned the dialogue to ensure it flowed smoothly and maintained the game’s tone.
+
+                    <br /><br />
+                    <h2>Play Here: <a href="https://teitoku-lowliet.itch.io/dross">Itch.io Link</a></h2>
+                    <h2>Project Files: <a href="https://github.com/AwesomeDudex5/Dross">Github Repository</a></h2>
+
+                </p>
             </div>
+
+        </div>
         <!--</section>-->
 
-        <!--
         <footer>
-            <ul>
-                <li><a href="#">Social Media 1</a></li>
-                <li><a href="#">Social Media 2</a></li>
-                <li><a href="#">Email</a></li>
-                <li><a href="#">Phone: 123-456-7890</a></li>
-            </ul>
+            <p>
+                <hr />
+                <h1>Contact Information</h1>
+                <h2>
+                    <a href="mailto:lowell.batacan@yahoo.com">lowell.batacan@yahoo.com</a> |
+                    <a href="https://www.linkedin.com/in/lowell-batacan/">LinkedIn</a> |
+                    <a href="https://teitoku-lowliet.itch.io/">Itch.io</a> |
+                    <a href="https://github.com/AwesomeDudex5">GitHub</a>
+                </h2>
+
+            </p>
         </footer>
-        -->
     </div>
 </body>
 </html>

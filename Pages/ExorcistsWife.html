@@ -10,7 +10,7 @@
     <div class="container">
         <div class="banner">
             <h1>Lowell Batacan</h1>
-            <h3>Programmer</h3>
+            <h3>Programmer | Game Designer</h3>
         </div>
         <header>
             <nav>
@@ -23,99 +23,102 @@
 
 
         <!--<section class="boxes">-->
-            <div class="box white">
-                <div class="box3">
-                    <h1>Exorcist's Wife</h1>
-                    <p>
-                        <h2>Gameplay</h2>
-                        <video width="854" height="480" controls="controls">
-                            <source src="../ExorcistWifeImages/EW_Vid5.mp4" type="video/mp4" />
-                        </video>
+        <div class="box white">
+            <div class="box3">
+                <h1>Exorcist's Wife</h1>
+                <p>
+                    <h2>Gameplay</h2>
+                    <video width="854" height="480" controls="controls">
+                        <source src="../ExorcistWifeImages/EW_Vid5.mp4" type="video/mp4" />
+                    </video>
 
-                        <br />
+                    <br />
 
-                        <h2>Overview</h2>
-                        A top-down 2d pixel art game made in Unity. Made for the NaNoRenO 2020 game jam, it follows the story of Caius,
-                        an exorcist who specializes in banishing ghosts and is also a loving husband to his wife, Uzuki. However, a tragic
-                        fate fell upon them at their house that has forever changed their lives.
+                    <h2>Overview</h2>
+                    A top-down 2d pixel art game made in Unity. Made for the NaNoRenO 2020 game jam, it follows the story of Caius,
+                    an exorcist who specializes in banishing ghosts and is also a loving husband to his wife, Uzuki. However, a tragic
+                    fate fell upon them at their house that has forever changed their lives.
 
-                        <br />
+                    <br />
 
-                        <h2>Goal</h2>
-                        My main goal of this game was to write a narrative and design cutscenes.
-                        The gameplay of a top-down shooter to banish ghosts was chosen due to its simplicity, that way I can
-                        focus on writing the narrative and explore the cutscene and animation features of Unity.
-                        My sister drew the character designs, giving me time to focus on other aspects of the game.
+                    <h2>Goal</h2>
+                    My main goal of this game was to write a narrative and design cutscenes.
+                    The gameplay of a top-down shooter to banish ghosts was chosen due to its simplicity, that way I can
+                    focus on writing the narrative and explore the cutscene and animation features of Unity.
+                    My sister drew the character designs, giving me time to focus on other aspects of the game.
 
-                        <br /><br />
-                        <h2>Development</h2>
-                        I prioritized narrative design for this project.
-                        To achieve this within the NaNoRenO game jam timeframe, I opted for a top-down shooter mechanic due to its simplicity.
-                        Since i have made top-down shooter games before, I resued code from my previous games to expedite the development process.
-                        This allowed me to dedicate most of my development time to crafting the story and exploring Unity's cutscene and animation
-                        features. My sister's character designs further streamlined development, freeing me to concentrate on scripting and system design.
-                        <br /><br />
-                        <img src="../ExorcistWifeImages/EW2.gif" />
-                        <br /><br />
-                        With the core gameplay loop established,
-                        I focused on building the systems that would deliver the narrative.
-                        I began by creating a general screenplay outline for the game's story.  Next, I designed systems within Unity to construct
-                        a visual novel format, complete with cutscenes, triggers, and a dialogue system. These systems allowed for efficient storytelling
-                        and integration of the narrative elements. With the systems established, it made design easier for me as all I had to do was insert
-                        the appropiate sprites and strings for each scene.
-                        <br /><br />
-                        <img src="../ExorcistWifeImages/EW1.png" width="600" height="450" />
+                    <br /><br />
+                    <h2>Development</h2>
+                    I prioritized narrative design for this project.
+                    To achieve this within the NaNoRenO game jam timeframe, I opted for a top-down shooter mechanic due to its simplicity.
+                    Since i have made top-down shooter games before, I resued code from my previous games to expedite the development process.
+                    This allowed me to dedicate most of my development time to crafting the story and exploring Unity's cutscene and animation
+                    features. My sister's character designs further streamlined development, freeing me to concentrate on scripting and system design.
+                    <br /><br />
+                    <img src="../ExorcistWifeImages/EW2.gif" />
+                    <br /><br />
+                    With the core gameplay loop established,
+                    I focused on building the systems that would deliver the narrative.
+                    I began by creating a general screenplay outline for the game's story.  Next, I designed systems within Unity to construct
+                    a visual novel format, complete with cutscenes, triggers, and a dialogue system. These systems allowed for efficient storytelling
+                    and integration of the narrative elements. With the systems established, it made design easier for me as all I had to do was insert
+                    the appropiate sprites and strings for each scene.
+                    <br /><br />
+                    <img src="../ExorcistWifeImages/EW1.png" width="600" height="450" />
 
-                        <br /><br />
-                        <h2>Narrative Design</h2>
-                        When designing the overall narrative, I worked around the premise of an exorcist balancing his work and his home life. The first part
-                        of the game would be about Caius the exorcist in the field of duty and what his work usually entails. It also introduces the combat
-                        gameplay and general movement. The next scene would be when he returns home to his wife, showing his casual off-duty side. Then the
-                        plot twist of the chapter occurs when an enemy follows him back home, leading to the death of his wife while protecting their baby child.
-                        Afterwards, after the timeskip, it is revealed that the wife is present again, but as a ghost.
-                        <br /><br />
-                        There was a whole world and lore I wanted to explore in this game, especially to the church organization that employs exorcists, the origins
-                        of the ghosts, and mysteries behind Caius and his wife. However, due to the timeframe of the game, I focused on making the first chapter of the game.
-                        While I couldn't develop all of the story I wanted, this project gave me good practice on narrative design and writing for a game. To explain
-                        the mechanics of the world and the inner thoughts of characters and actions, I wrapped the text in brackets as to differentiate the type of
-                        sentences being spoken during the scene.
-                        <br /><br />
-                        <img src="../ExorcistWifeImages/EW4.PNG" />
-                        <br /><br />
-                        There is a quest system at play here. In order to progress the story, the player will have to complete the current task assigned. The
-                        triggers are either collision triggers or objects that increment a counter upon interacting. Upon finishing a task, a cutscene will play
-                        to progress the story. The cutscenes make use of Unity's Cinemachine components to create animations. The cutscene animations are comprised
-                        of camera pans, character sprite animations, and sprite movements.
-                        <br /><br />
-                        <img src="../ExorcistWifeImages/EW3.png" />
-                        <br /><br />
-                        When designing the characters, Caius and Uzuki, I always liked the idea of contrasting personalities in a relationship. Caius is a jaded yet
-                        experienced worker with a cold exterior. Uzuki is a aloof, warm, and welcoming woman who a bountiful heart. The premise of the story came about
-                        as I wanted to explore the idea of an exorcist having to wrestle with the idea of exorcising a beloved one, especially someone that helped
-                        complete them.
+                    <br /><br />
+                    <h2>Narrative Design</h2>
+                    When designing the overall narrative, I worked around the premise of an exorcist balancing his work and his home life. The first part
+                    of the game would be about Caius the exorcist in the field of duty and what his work usually entails. It also introduces the combat
+                    gameplay and general movement. The next scene would be when he returns home to his wife, showing his casual off-duty side. Then the
+                    plot twist of the chapter occurs when an enemy follows him back home, leading to the death of his wife while protecting their baby child.
+                    Afterwards, after the timeskip, it is revealed that the wife is present again, but as a ghost.
+                    <br /><br />
+                    There was a whole world and lore I wanted to explore in this game, especially to the church organization that employs exorcists, the origins
+                    of the ghosts, and mysteries behind Caius and his wife. However, due to the timeframe of the game, I focused on making the first chapter of the game.
+                    While I couldn't develop all of the story I wanted, this project gave me good practice on narrative design and writing for a game. To explain
+                    the mechanics of the world and the inner thoughts of characters and actions, I wrapped the text in brackets as to differentiate the type of
+                    sentences being spoken during the scene.
+                    <br /><br />
+                    <img src="../ExorcistWifeImages/EW4.PNG" />
+                    <br /><br />
+                    There is a quest system at play here. In order to progress the story, the player will have to complete the current task assigned. The
+                    triggers are either collision triggers or objects that increment a counter upon interacting. Upon finishing a task, a cutscene will play
+                    to progress the story. The cutscenes make use of Unity's Cinemachine components to create animations. The cutscene animations are comprised
+                    of camera pans, character sprite animations, and sprite movements.
+                    <br /><br />
+                    <img src="../ExorcistWifeImages/EW3.png" />
+                    <br /><br />
+                    When designing the characters, Caius and Uzuki, I always liked the idea of contrasting personalities in a relationship. Caius is a jaded yet
+                    experienced worker with a cold exterior. Uzuki is a aloof, warm, and welcoming woman who a bountiful heart. The premise of the story came about
+                    as I wanted to explore the idea of an exorcist having to wrestle with the idea of exorcising a beloved one, especially someone that helped
+                    complete them.
 
-                        <br /><br />
-                        Screenplay Link: <a href="Exorcist's Wife Design Document.pdf">Exorcist's Wife Design Document</a>
-                        <br /><br />
+                    <br /><br />
+                    Screenplay Link: <a href="Exorcist's Wife Design Document.pdf">Exorcist's Wife Design Document</a>
+                    <br /><br />
 
-                        <h2>Play Here: <a href="https://teitoku-lowliet.itch.io/the-exorcists-wife">Itch.io Link</a> </h2>
+                    <h2>Play Here: <a href="https://teitoku-lowliet.itch.io/the-exorcists-wife">Itch.io Link</a> </h2>
 
-                    </p>
-                </div>
-
+                </p>
             </div>
+
+        </div>
         <!--</section>-->
 
-        <!--
-    <footer>
-        <ul>
-            <li><a href="#">Social Media 1</a></li>
-            <li><a href="#">Social Media 2</a></li>
-            <li><a href="#">Email</a></li>
-            <li><a href="#">Phone: 123-456-7890</a></li>
-        </ul>
-    </footer>
-    -->
+        <footer>
+            <p>
+                <hr />
+                <h1>Contact Information</h1>
+                <h2>
+                    <a href="mailto:lowell.batacan@yahoo.com">lowell.batacan@yahoo.com</a> |
+                    <a href="https://www.linkedin.com/in/lowell-batacan/">LinkedIn</a> |
+                    <a href="https://teitoku-lowliet.itch.io/">Itch.io</a> |
+                    <a href="https://github.com/AwesomeDudex5">GitHub</a>
+                </h2>
+
+            </p>
+        </footer>
     </div>
 </body>
 </html>

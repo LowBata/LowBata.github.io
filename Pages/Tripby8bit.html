@@ -10,7 +10,7 @@
     <div class="container">
         <div class="banner">
             <h1>Lowell Batacan</h1>
-            <h3>Programmer</h3>
+            <h3>Programmer | Game Designer</h3>
         </div>
         <header>
             <nav>
@@ -23,132 +23,135 @@
 
 
         <!--<section class="boxes">-->
-            <div class="box white">
-                <div class="box3">
-                    <h1>Trip by 8-Bit</h1>
-                    <p>
-                        <h2>Gameplay</h2>
+        <div class="box white">
+            <div class="box3">
+                <h1>Trip by 8-Bit</h1>
+                <p>
+                    <h2>Gameplay</h2>
 
-                        <video width="854" height="480" controls="controls">
-                            <source src="../Tripby8bitImages/TripGameplay.mp4" type="video/mp4" />
-                        </video>
+                    <video width="854" height="480" controls="controls">
+                        <source src="../Tripby8bitImages/TripGameplay.mp4" type="video/mp4" />
+                    </video>
 
-                        <h2>Overview</h2>
-                        A 3d/2d game experience. After a sad day, Noah walks back home, recollecting memories and reminiscing about the good old days.
-                        Take a walk back along with him on this interactive experience.  A love letter to games, childhood, and life. The game uses narrative and
-                        an interesting twist on graphics to help evoke a nostalgic feeling.
+                    <h2>Overview</h2>
+                    A 3d/2d game experience. After a sad day, Noah walks back home, recollecting memories and reminiscing about the good old days.
+                    Take a walk back along with him on this interactive experience.  A love letter to games, childhood, and life. The game uses narrative and
+                    an interesting twist on graphics to help evoke a nostalgic feeling.
 
-                        <h2>Goal</h2>
-                        I wanted to be in charge of narrative design and writing in this game. I coded the dialogue system and interactable triggers that play out dialogue for the story.
-                        My main priority was to write a narrative that parallels the journey back home and elicit a nostalgic feeling through memories.
-
-
-                        <h2>Development</h2>
-                        Trip by 8-bit* was a collaborative class project designed to evoke nostalgia through a unique blend of 3D and 2D visuals, introspective storytelling,
-                        and minimalist gameplay. As the narrative designer and one of the programmers, my role was to create systems that supported the game’s emotional core
-                        while ensuring a smooth and engaging player experience. The development process was filled with technical challenges, particularly in implementing
-                        the dialogue system and dynamic pixelation effect
-
-                        <h3>Programming the Dialogue System and Text System</h3>
-                        Since the game is a walking simulator, the narrative is delivered through dialogue triggered by the player’s interactions with objects in the environment.
-                        To achieve this, I designed a dialogue system that uses an array of strings to store and display text.  Dialogue is stored in invisible game objects
-                        that are scattered throughout the levels, each having a trigger collision that interacts with the player’s hitbox.
-
-                        <br /><br />
-
-                        I wanted the dialogue to feel natural and immersive, so I implemented a scrolling text effect where characters appear one at a time.
-                        To achieve this, I used an IEnumerator coroutine in Unity. The coroutine processes the current string, displaying each character with a small delay based on a
-                        `textSpeed` variable. This created the illusion of text being typed out in real-time.
-
-                        <br /><br />
-                        <img src="../Tripby8bitImages/Code-TextDisplay.PNG" />
-                        <br /><br />
-
-                        During playtesting, some players found the default text speed either too fast or too slow. To address this, I added a
-                        text settings menu at the start of the game. This menu included sliders for adjusting `textSpeed` (the delay between characters) and `textHold`
-                        (the delay before moving to the next line). These sliders modified public variables in the Dialogue Manager, which were then used in the coroutine to
-                        control the scrolling speed dynamically.
-
-                        This system allowed players to tailor the dialogue experience to their preferences, improving accessibility and overall satisfaction.
-
-                        <br /><br />
-                        <img src="../Tripby8bitImages/UI.png" />
-                        <br />
-
-                        <h3>Dynamic Pixelation Effect</h3>
-                        One of the game’s core visual features is the transition from 3D to 2D, symbolizing the protagonist’s journey back to simpler times.
-                        Another programmer on the team had already implemented a screen pixelation effect using a library, which allowed us to adjust the pixelation level via a float variable.
-
-                        <br /><br />
-
-                        To create a seamless transition, I wrote a script that used invisible triggers placed throughout the 3D maps. When the player’s hitbox collided with a trigger,
-                        the pixelation level would incrementally increase. The triggers are similar to the dialogue triggers as they are invisble game objects with a trigger collisions.
-                        This gradual change ensured the transition felt natural and aligned with the narrative’s emotional arc.
-
-                        <br /><br />
-                        <img src="../Tripby8bitImages/Code-PixelTransition.PNG" />
-                        <br /><br />
-
-                        Playtesting revealed that the pixelation effect needed fine-tuning to feel just right. If the increments were too large, the transition felt jarring;
-                        if they were too small, the effect was barely noticeable. I spent time adjusting the `incrementAmount` variable and testing the game repeatedly to ensure the pixelation
-                        increased smoothly and meaningfully over time.
+                    <h2>Goal</h2>
+                    I wanted to be in charge of narrative design and writing in this game. I coded the dialogue system and interactable triggers that play out dialogue for the story.
+                    My main priority was to write a narrative that parallels the journey back home and elicit a nostalgic feeling through memories.
 
 
-                        <h3>Designing the Narrative and Environment</h3>
-                        While programming was a significant focus, the narrative and environment design were equally important in creating a nostalgic experience.
-                        The game is divided into four maps, each representing a different stage of the protagonist’s journey:
+                    <h2>Development</h2>
+                    Trip by 8-bit* was a collaborative class project designed to evoke nostalgia through a unique blend of 3D and 2D visuals, introspective storytelling,
+                    and minimalist gameplay. As the narrative designer and one of the programmers, my role was to create systems that supported the game’s emotional core
+                    while ensuring a smooth and engaging player experience. The development process was filled with technical challenges, particularly in implementing
+                    the dialogue system and dynamic pixelation effect
 
-                        <br />
+                    <h3>Programming the Dialogue System and Text System</h3>
+                    Since the game is a walking simulator, the narrative is delivered through dialogue triggered by the player’s interactions with objects in the environment.
+                    To achieve this, I designed a dialogue system that uses an array of strings to store and display text.  Dialogue is stored in invisible game objects
+                    that are scattered throughout the levels, each having a trigger collision that interacts with the player’s hitbox.
 
-                        <ol>
-                            <li>The City: A 3D environment where the protagonist reflects on his family’s time in the city.</li>
-                            <li>The Hometown: A transitional map where the pixelation effect begins, symbolizing the shift to simpler times.</li>
-                            <li>The House (First Floor): A fully pixelated 2D environment, evoking a sense of familiarity and nostalgia.</li>
-                            <li>The House (Upstairs): The final map, where the protagonist discovers his father’s old game console, culminating in a heartfelt reflection on childhood memories.</li>
-                        </ol>
+                    <br /><br />
+
+                    I wanted the dialogue to feel natural and immersive, so I implemented a scrolling text effect where characters appear one at a time.
+                    To achieve this, I used an IEnumerator coroutine in Unity. The coroutine processes the current string, displaying each character with a small delay based on a
+                    `textSpeed` variable. This created the illusion of text being typed out in real-time.
+
+                    <br /><br />
+                    <img src="../Tripby8bitImages/Code-TextDisplay.PNG" />
+                    <br /><br />
+
+                    During playtesting, some players found the default text speed either too fast or too slow. To address this, I added a
+                    text settings menu at the start of the game. This menu included sliders for adjusting `textSpeed` (the delay between characters) and `textHold`
+                    (the delay before moving to the next line). These sliders modified public variables in the Dialogue Manager, which were then used in the coroutine to
+                    control the scrolling speed dynamically.
+
+                    This system allowed players to tailor the dialogue experience to their preferences, improving accessibility and overall satisfaction.
+
+                    <br /><br />
+                    <img src="../Tripby8bitImages/UI.png" />
+                    <br />
+
+                    <h3>Dynamic Pixelation Effect</h3>
+                    One of the game’s core visual features is the transition from 3D to 2D, symbolizing the protagonist’s journey back to simpler times.
+                    Another programmer on the team had already implemented a screen pixelation effect using a library, which allowed us to adjust the pixelation level via a float variable.
+
+                    <br /><br />
+
+                    To create a seamless transition, I wrote a script that used invisible triggers placed throughout the 3D maps. When the player’s hitbox collided with a trigger,
+                    the pixelation level would incrementally increase. The triggers are similar to the dialogue triggers as they are invisble game objects with a trigger collisions.
+                    This gradual change ensured the transition felt natural and aligned with the narrative’s emotional arc.
+
+                    <br /><br />
+                    <img src="../Tripby8bitImages/Code-PixelTransition.PNG" />
+                    <br /><br />
+
+                    Playtesting revealed that the pixelation effect needed fine-tuning to feel just right. If the increments were too large, the transition felt jarring;
+                    if they were too small, the effect was barely noticeable. I spent time adjusting the `incrementAmount` variable and testing the game repeatedly to ensure the pixelation
+                    increased smoothly and meaningfully over time.
 
 
-                        <br /><br />
-                        <img src="../Tripby8bitImages/3DImage.png" />
-                        <br />
-                        <img src="../Tripby8bitImages/2DImage.png" />
-                        <br />
+                    <h3>Designing the Narrative and Environment</h3>
+                    While programming was a significant focus, the narrative and environment design were equally important in creating a nostalgic experience.
+                    The game is divided into four maps, each representing a different stage of the protagonist’s journey:
 
-                        To guide players through these maps, I placed clusters of white particles at key locations, such as a restaurant or park equipment.
-                        These particles served as visual cues, drawing the player’s attention to interactable objects that triggered introspective thoughts. Sometimes,
-                        these thoughts were accompanied by low-resolution pictures, further enhancing the nostalgic atmosphere.
+                    <br />
+
+                    <ol>
+                        <li>The City: A 3D environment where the protagonist reflects on his family’s time in the city.</li>
+                        <li>The Hometown: A transitional map where the pixelation effect begins, symbolizing the shift to simpler times.</li>
+                        <li>The House (First Floor): A fully pixelated 2D environment, evoking a sense of familiarity and nostalgia.</li>
+                        <li>The House (Upstairs): The final map, where the protagonist discovers his father’s old game console, culminating in a heartfelt reflection on childhood memories.</li>
+                    </ol>
 
 
-                        <h3>Playtesting and Iteration</h3>
-                        Playtesting was crucial to refining the game’s systems and ensuring they aligned with the narrative vision. For example:
-                        <br />
-                        - The dialogue system was adjusted to accommodate different reading speeds, improving accessibility.
-                        <br />
-                        - The pixelation effect was fine-tuned to ensure it felt gradual and meaningful.
-                        <br />
-                        - The placement of particle clusters and triggers was optimized to guide players naturally through the environment.
+                    <br /><br />
+                    <img src="../Tripby8bitImages/3DImage.png" />
+                    <br />
+                    <img src="../Tripby8bitImages/2DImage.png" />
+                    <br />
 
-                        <br /><br />
+                    To guide players through these maps, I placed clusters of white particles at key locations, such as a restaurant or park equipment.
+                    These particles served as visual cues, drawing the player’s attention to interactable objects that triggered introspective thoughts. Sometimes,
+                    these thoughts were accompanied by low-resolution pictures, further enhancing the nostalgic atmosphere.
 
-                        <h2>Download Here: <a href="https://teitoku-lowliet.itch.io/trip-by-8-bit">Itch.io Link</a></h2>
-                        <h2>Project Files: <a href="https://github.com/Psalms77/Nostalgia_Game">Github Repository</a></h2>
 
-                    </p>
-                </div>
+                    <h3>Playtesting and Iteration</h3>
+                    Playtesting was crucial to refining the game’s systems and ensuring they aligned with the narrative vision. For example:
+                    <br />
+                    - The dialogue system was adjusted to accommodate different reading speeds, improving accessibility.
+                    <br />
+                    - The pixelation effect was fine-tuned to ensure it felt gradual and meaningful.
+                    <br />
+                    - The placement of particle clusters and triggers was optimized to guide players naturally through the environment.
 
+                    <br /><br />
+
+                    <h2>Download Here: <a href="https://teitoku-lowliet.itch.io/trip-by-8-bit">Itch.io Link</a></h2>
+                    <h2>Project Files: <a href="https://github.com/Psalms77/Nostalgia_Game">Github Repository</a></h2>
+
+                </p>
             </div>
+
+        </div>
         <!--</section>-->
 
-        <!--
         <footer>
-            <ul>
-                <li><a href="#">Social Media 1</a></li>
-                <li><a href="#">Social Media 2</a></li>
-                <li><a href="#">Email</a></li>
-                <li><a href="#">Phone: 123-456-7890</a></li>
-            </ul>
+            <p>
+                <hr />
+                <h1>Contact Information</h1>
+                <h2>
+                    <a href="mailto:lowell.batacan@yahoo.com">lowell.batacan@yahoo.com</a> |
+                    <a href="https://www.linkedin.com/in/lowell-batacan/">LinkedIn</a> |
+                    <a href="https://teitoku-lowliet.itch.io/">Itch.io</a> |
+                    <a href="https://github.com/AwesomeDudex5">GitHub</a>
+                </h2>
+
+            </p>
         </footer>
-        -->
     </div>
 </body>
 </html>
