@@ -24,7 +24,10 @@ a {
 .container {
     max-width: 90%; /* Maximum width for desktop screens */
     margin: 0 auto;
-    padding: 0.25rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,7 +46,7 @@ a {
 /* ===================== */
 .banner {
     font-family: "Stylish", serif;
-    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Fluid font size */
+    font-size: clamp(1rem, 5vw, 2rem); /* Fluid font size */
     color: white;
     width: 100%;
     text-align: center;
@@ -57,7 +60,7 @@ a {
 /* Adjust font size for smaller screens */
 @media (max-width: 768px) {
     .banner {
-        font-size: clamp(1.2rem, 4vw, 2rem); /* Smaller fluid font size */
+        font-size: clamp(0.9rem, 4vw, 1.8rem); /* Smaller fluid font size */
     }
 }
 
@@ -191,7 +194,7 @@ footer {
 .box2 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     padding: 1rem;
     flex: 1;
