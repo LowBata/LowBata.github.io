@@ -416,3 +416,10 @@ footer {
         font-size: 0.9rem; /* Smaller font size for phones */
     }
 }
+
+.FileLinks {
+    text-align: center; /* Centers the text horizontally */
+    width: 100%; /* Ensures the div takes up the full width of its container */
+    margin: 0 auto; /* Centers the div itself horizontally */
+    padding: 0rem 0; /* Adds some padding above and below for spacing */
+}
