@@ -427,3 +427,53 @@ footer {
     margin: 0 auto; /* Centers the div itself horizontally */
     padding: 0rem 0; /* Adds some padding above and below for spacing */
 }
+
+/* To Top Button */
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position so it stays in view */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Default position for smaller screens */
+    padding: 15px 30px; /* Padding for button size */
+    font-size: 18px; /* Font size */
+    font-family: "Stylish", serif; /* Custom font */
+    color: white; /* Text color */
+    background-color: #e0416e; /* Pink background */
+    border: 2px solid white; /* White border */
+    border-radius: 25px; /* Rounder corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+    #scrollToTopBtn:hover {
+        background-color: #ff69b4; /* Slightly darker pink on hover */
+        transform: scale(1.1); /* Slightly enlarge on hover */
+    }
+
+/* Adjust button position and size for larger screens */
+@media (min-width: 1024px) {
+    #scrollToTopBtn {
+        right: calc(50% - 600px); /* Position next to the .container */
+        padding: 20px 40px; /* Larger padding */
+        font-size: 20px; /* Larger font size */
+    }
+}
+
+/* Adjust button for medium screens (e.g., tablets) */
+@media (max-width: 1023px) and (min-width: 768px) {
+    #scrollToTopBtn {
+        right: 40px; /* Move closer to the edge */
+        padding: 18px 36px; /* Slightly smaller padding */
+        font-size: 18px; /* Slightly smaller font size */
+    }
+}
+
+/* Adjust button for small screens (e.g., phones) */
+@media (max-width: 767px) {
+    #scrollToTopBtn {
+        right: 10px; /* Move closer to the edge */
+        padding: 12px 24px; /* Smaller padding */
+        font-size: 16px; /* Smaller font size */
+    }
+}
