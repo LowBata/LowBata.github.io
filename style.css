@@ -171,6 +171,9 @@ footer {
     background-color: white;
 }
 
+/* ===================== */
+/* Box 1        */
+/* ===================== */
 .box1 {
     display: flex;
     flex-direction: column;
@@ -195,6 +198,10 @@ footer {
         border-radius: 10px; /* Optional: Add rounded corners */
     }
 
+
+/* ===================== */
+/* Box 2         */
+/* ===================== */
 .box2 {
     display: flex;
     flex-direction: column;
@@ -250,11 +257,15 @@ footer {
 }
 
 /* ===================== */
-/* Media Handling        */
+/* Box 3 - Portfolio Pages       */
 /* ===================== */
 .box3 {
     padding: 2rem;
 }
+
+    .box3 a {
+        color: #43accc; /* Change this to your desired link color */
+    }
 
     .box3 h1 {
         text-align: center; /* Center-align the text */
