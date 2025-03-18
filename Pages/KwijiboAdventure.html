@@ -85,18 +85,24 @@
 
                 <br /><br />
 
+                <img src="../KwyjiboImages/NPC-Sample.png" />
+
+                <br />
+
                 <video width="854" height="480" controls="controls">
                     <source src="../KwyjiboImages/Vid-NPC-Generator.mp4" type="video/mp4" />
                 </video>
 
                 <br /><br />
 
-                <img src="../KwyjiboImages/Code-NPC_Random.PNG" />
-
-                <br />
-
                 Once the models were ready, I exported them to Unity, where I created an NPC Generator script. This script randomized the NPCs’
                 appearances by combining different clothing, hairstyles, and colors, resulting in a wide variety of enemies for the rogue-like gameplay.
+
+                <br /><br />
+
+                <img src="../KwyjiboImages/Code-NPC_Random.PNG" />
+
+
                 <br />
 
                 <h3>Designing the Protagonist, Emily</h3>
@@ -161,6 +167,40 @@
                 <br /><br />
                 <img src="../KwyjiboImages/Code-BossPhases.PNG" />
                 <br />
+
+                <h3>Creating the Narrative</h3>
+                To visually convey the story, I created 2D comic-style art that played at key moments in the game: the beginning,
+                the ending, and between two levels. These comics illustrated Emily’s journey—from being a victim of bullying to discovering her magical yo-yo,
+                gaining confidence, and ultimately confronting the consequences of her newfound power. The story culminates in a poignant moment where Emily realizes
+                she has become a bully herself and decides to break the cycle, adding depth and emotional resonance to the game.
+
+                <br /><br />
+                The narrative design and comics served as a bridge between gameplay and story, illustrating how Emily—and by extension, the
+                player—grows more powerful throughout the game. This parallel between narrative and gameplay reinforced the game’s themes and
+                provided a satisfying emotional arc, making Kwyjibo Adventure not just a game about combat, but a story about growth, self-discovery, and breaking cycles.
+
+                <h4>Intro Comic</h4>
+                <video width="854" height="480" controls="controls">
+                    <source src="../KwyjiboImages/intro-comic-vid.mp4" type="video/mp4" />
+                </video>
+
+                <h4>Outro Comic</h4>
+                <video width="854" height="480" controls="controls">
+                    <source src="../KwyjiboImages/outro-comic-vid.mp4" type="video/mp4" />
+                </video>
+                <br />
+                To integrate the comics into the game, I wrote a custom C# script that allowed the comic pages and panels to progress sequentially with the press of a
+                button. This script not only handled the timing and transitions between panels but also seamlessly integrated the
+                comics into the game’s UI, creating a cohesive narrative experience. In the hierarchy, the panels are stored
+                within "page" objects, and the script goes through each panel one by one. And when it reaches the end of the page,
+                it disables the current page and loads the next one.
+                By combining narrative design, 2D art, and UI scripting, I ensured that the story was an integral part of the
+                gameplay, enhancing the player’s connection to Emily’s journey.
+                <br /><br />
+                <img src="../KwyjiboImages/Code-ComicManager.PNG" />
+                <br />
+
+
 
                 <h3>Reflections</h3>
                 Kwyjibo Adventure was a transformative project that allowed me to grow as a 3D artist and technical artist.
